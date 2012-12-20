@@ -4,7 +4,7 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
+  , index = require('./routes/index')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
@@ -29,7 +29,11 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
+// page routing
+app.get('/', index.index);
+app.get('/contact', index.contact);
+app.post('/contact', index.post_contact);
+app.get('/about', index.about);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

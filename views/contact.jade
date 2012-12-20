@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div#contact
+    title=title 
+    h1=title
+    form(method='post')
+      | Send me your comments about whatever
+      div
+        input(type='text', value='Name', name='name')
+        input(type='text', value='email', name='email')
+        input(type='submit', name='Submit')
