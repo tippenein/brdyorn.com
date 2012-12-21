@@ -17,10 +17,12 @@ exports.about = function(req, res){
 
 exports.post_contact = function(req, res){
   name = req.body.name || 'Anonymous';
-  name = req.body.email ;
+  email = req.body.email;
+  message = req.body.message;
   
   req.session.name = name;
   req.session.email = email;
-  console.log(name + email);
+  req.session.message = message;
+  console.log(name + " - " + email + " said: " + message);
   res.redirect('/');
 };

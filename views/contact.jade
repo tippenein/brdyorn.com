@@ -6,7 +6,10 @@ block content
     h1=title
     form(method='post')
       | Send me your comments about whatever
-      div
-        input(type='text', value='Name', name='name')
-        input(type='text', value='email', name='email')
-        input(type='submit', name='Submit')
+    input(type='text', placeholder='Name', name='name', id="name")
+    input(type='text', placeholder='Email', name='email', id="email") 
+    | <br> 
+    textarea(type='text', placeholder="Message here", name='message',
+        id="message", rows="10", cols="90")
+    | <br> 
+    input(type='submit', name='Submit')
