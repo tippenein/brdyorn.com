@@ -1,0 +1,28 @@
+extends base
+
+block body
+  #top-title
+    p BrdyOrn
+  #top-subtitle
+    p Online home of Brady Ouren
+  .navbar
+    .navbar-inner
+      .container
+        ul.nav
+          li 
+            a(href="/") Home
+          li 
+            a(href="/about") About
+          li 
+            a(href="/contact") Contact
+  .container
+    .row
+      .span12
+      block content
+block footer 
+  div Copyright &copy; Brady Ouren #{+new Date().getFullYear()}
+  a(href='/') Home
+  | |  
+  a(href='/contact') Contact
+  | |  
+  a(href='/about') About 
