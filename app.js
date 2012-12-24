@@ -33,6 +33,7 @@ app.configure('development', function(){
 app.get('/', index.index);
 app.get('/contact', index.contact);
 app.post('/contact', index.post_contact);
+app.get('/modesty', index.modesty);
 app.get('/about', index.about);
 app.get('/users', user.list);
 

@@ -26,3 +26,8 @@ exports.post_contact = function(req, res){
   console.log(name + " - " + email + " said: " + message);
   res.redirect('/');
 };
+
+exports.modesty = function(req, res){
+  res.render('modesty', { title: "Mode-sty"});
+};
+
