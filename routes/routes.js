@@ -1,7 +1,12 @@
-
-/*
- * GET home page.
+/* 
+ * static page routes go here 
  */
+
+var renderDirect = function(req, res, template, dict){
+  res.render(template, dict)
+}
+
+//exports.index = renderDirect(req, res, 'index', { title: 'BrdyOrn' })
 
 exports.index = function(req, res){
   res.render('index', { title: 'BrdyOrn' });
