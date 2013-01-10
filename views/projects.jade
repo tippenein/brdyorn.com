@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  title=title
+  
+  .span4
+    h2 Projects I'm working on.
+    hr.dashed
+    .project-text 
+      //this site
+      h4 brdyorn.com
+      
+      p This particular site is an ongoing project for me.  
+      p I adapted the original django site into this node/express version recently for the sake of curiousity.  
+      p There are some things I'd like to try with node plus I'm able to try html/css things out much quicker with jade.
+      | <br>
+      a(href="http://www.github.com/tippenein/brdy-node") Browse it on Github 
+
+      //chatty.js
+      h4 node.js chat using socket.io
+
+      p Inspired by a school project where we wrote a chat server with cgi and udp sockets, I wanted to see how easy it was to get the same functionality with node.
+      | <br>
+      a(href="http://www.github.com/tippenein/chatty") Browse it on Github 
+  
+  .span4  
+    h2 Projects I have finished
+    hr.dashed
+    .project-text
+      h4 Socket Programming for Networks 4211
+
+      p Fall semester of 2012 I finished a Networks project involving sockets which I wrote in Python.
+      p The particular assignment was rather silly since we had an 'atm' middleman which handled client transactions and handed them off to the bank server.  I used select in python which is essentially the same as the equivalent C function to asynchronously handle up an arbitrary amount of client connections while the bank server will handle all the atm requested transactions.  More details in the readme.md in the repo.
+      
+      a(href="http://www.bitbucket.org/tippenein/socket-assgn-4211") Browse it on Bitbucket
+
+

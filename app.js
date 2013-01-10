@@ -42,6 +42,7 @@ app.configure('development', function(){
 // page routing
 app.get('/', routes.index);
 app.get('/contact', routes.contact);
+app.get('/projects', routes.projects);
 app.post('/save_contact', routes.post_contact);
 app.get('/modesty', routes.modesty);
 app.get('/about', routes.about);

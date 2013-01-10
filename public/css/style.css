@@ -1,4 +1,6 @@
-html{height:100%;}
+html{
+  height:100%;
+}
 
 body{
   padding-bottom:10px;
@@ -6,12 +8,24 @@ body{
   height:100%;
   font-size:1em;
   color:#0f0f0f;
-  background-color:#f0f1f2;
+  background: url(../imgs/tile.png)
 }
 
-a {
+p {
+  font-family: 'Arial', sans-serif;
+  font-size:1em;
+}
+
+hr.dashed{
+  border-width: 0.5px;
+  border: dashed;}
+
+#footer a {
   padding:1em;
-  
+}
+
+a:hover{
+  color: #fc1501;
 }
 
 #top-title a {
@@ -44,11 +58,12 @@ a {
 }
 /* ----------FOOTER------------*/
 #footer {
+  color:#fafafa;
   padding-top: 0.5em;
   height: 60px;
   position: relative;
   text-align: center;
-  background-color: #dadadd;
+  background-color:#584E56;
 }
 
 
