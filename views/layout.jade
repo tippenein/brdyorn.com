@@ -1,24 +1,25 @@
 extends base
 
 block body
-  .icon.pull-left
-    img(src='imgs/favicon.ico')
-  #top-title
-    p BrdyOrn
-  #top-subtitle
+  #top-title.centered
+    a(href="/") BrdyOrn
+  #top-subtitle.centered
     p Online home of Brady Ouren
   .navbar
     .navbar-inner
       .container
-        ul.nav.pull-right
-
+        ul.nav.pull-left
           li 
-            a(href="/") Home
+            a(href="/") 
+              img(src="imgs/favicon.ico")
           li 
             a(href="/about") About
           li 
             a(href="/contact") Contact
   .container
+    .span12
+      .status-msg
+        p
     .row
       .span9
         .content
@@ -26,20 +27,22 @@ block body
       .span3
         .sidebar
           block sidebar
-          // social media icons
-          a(href='http://www.twitter.com/tippenein', target='_blank') 
-            img(src='imgs/social/32/twitter.png')
-          a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank')
-            img(src='imgs/social/32/linkedin.png')
-          a(href='http://www.last.fm/user/planetplosion', target='_blank') 
-            img(src='imgs/social/32/lastfm.png')
-
-block footer 
-  div Copyright &copy; Brady Ouren #{+new Date().getFullYear()}
-  a(href='/') Home
-  | |  
-  a(href='/contact') Contact
-  | |  
-  a(href='/about') About
-  | |
-
+          p wheee
+          
+  #footer 
+    a(href='/') Home
+    | |
+    a(href='/contact') Contact
+    | |
+    a(href='/about') About
+    | |
+    a(href='http://www.twitter.com/tippenein', target='_blank') twitter 
+      //img(src='imgs/social/32/twitter.png')
+    | |
+    a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank') linkedin
+      //img(src='imgs/social/32/linkedin.png')
+    | |
+    a(href='http://www.last.fm/user/planetplosion', target='_blank') last.fm
+      //img(src='imgs/social/32/lastfm.png')
+    | |
+    p Copyright &copy; Brady Ouren #{+new Date().getFullYear()}

@@ -6,8 +6,6 @@ var renderDirect = function(req, res, template, dict){
   res.render(template, dict)
 }
 
-//exports.index = renderDirect(req, res, 'index', { title: 'BrdyOrn' })
-
 exports.index = function(req, res){
   res.render('index', { title: 'BrdyOrn' });
 };
@@ -22,13 +20,10 @@ exports.about = function(req, res){
 
 exports.post_contact = function(req, res){
   name = req.body.name || 'Anonymous';
-  email = req.body.email;
+  email = req.body.email || 'None';
   message = req.body.message;
-  
-  req.session.name = name;
-  req.session.email = email;
-  req.session.message = message;
   console.log(name + " - " + email + " said: " + message);
+  // send message to db 
   res.redirect('/');
 };
 

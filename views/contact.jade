@@ -4,12 +4,13 @@ block content
   div#contact
     title=title 
     h1=title
-    form(method='post')
+    form(action='/save_contact', method='post')
       | Send me your comments about whatever
-    input(type='text', placeholder='Name', name='name', id="name")
-    input(type='text', placeholder='Email', name='email', id="email") 
-    | <br> 
-    textarea(type='text', placeholder="Message here", name='message',
-        id="message", rows="10", cols="90")
-    | <br> 
-    input(type='submit', name='Submit')
+      | <br>
+      input(type='text', placeholder='Name', name='name', id="name")
+      input(type='text', placeholder='Email', name='email', id="email") 
+      | <br> 
+      textarea(type='text', placeholder="Message here", name='message',
+          id="message", rows="10", cols="90")
+      | <br> 
+      input(type='submit', name='Submit')
