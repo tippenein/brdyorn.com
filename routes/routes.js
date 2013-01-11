@@ -21,6 +21,11 @@ exports.post_contact = function(req, res){
   email = req.body.email || 'None';
   message = req.body.message;
   console.log(name + " - " + email + " said: \n" + message);
+  db.open(function(err, db){
+    db.collection('test', function(err, collection){
+      console.log('collection: ' + collection)
+    })
+  })
   // send message to db 
   res.render('index', {title: '', type: 'success', status: 'Thanks for the comments'})
 };
@@ -29,3 +34,38 @@ exports.modesty = function(req, res){
   res.render('modesty', { title: "Mode-sty"});
 };
 
+
+exports.todo = function(req, res){
+  // get tasks from file and render
+  var todos = [];
+  console.log("todos:" + todos)
+  db.open(function(err, db) {
+    db.collection('test', function(err, collection) {
+      console.log(collection)
+    })
+  })
+  res.render('todo', 
+    { title: 'task list'
+    , todos: todos 
+    });
+}
+
+exports.saveTodo = function(req, res) {
+  // POST todo
+  // write new task to file
+  var newTodo = {};
+  newTodo = req.body['task'];
+  appendTodo(newTodo)
+  res.redirect("back");
+}
+
+function appendDb(item, todo) {
+  db.open(function(err,db) {
+    db.collection('todo', function(err, collection) {
+      collection.insert(item, function(err, docs) {
+        console.log(docs);
+        db.close();
+      })
+    })
+  })
+}

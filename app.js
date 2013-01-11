@@ -4,48 +4,18 @@
  */
 
 var express = require('express')
+  , app     = module.exports = express()
   , http    = require('http')
-  , path    = require('path')
-  , db      = require('./db/db.js')
   /* routes */
   , routes  = require('./routes/routes')
-  , todo    = require('./routes/todo')
-  , user    = require('./routes/user')
-  /* db */
-  , mongo = require('mongodb')
-  , host = 'localhost'
-  , port = mongo.Connection.DEFAULT_PORT
-  , db = new mongo.Db('brdyorn', new mongo.Server(host, port, {}), {})
+  /* db connection */
+  , mongoose = require('mongoose')
 
-exports.db = db
+// change this to the real db after testing
+//mongoose.connect('mongodb://localhost/test');
+//db = mongoose.connection
 
-var app = express();
-
-app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.favicon(__dirname + '/public/imgs/favicon.ico'));
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieParser('AbRsd4gSFffvhy$sfgb5#rs'));
-  app.use(express.session());
-  app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
-});
-
-app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions:true, showStack:true }));
-  app.set('port', process.env.PORT || 8080);
-  app.use(express.logger('dev'));
-});
-app.configure('production', function(){
-  app.use(express.errorHandler());
-  app.use(function(req,res,next){
-    res.status(404);
-    res.render('404', {url: req.url, title: '404'});
-  })
-  app.set('port', 80);
-});
+require('./config')(app, express)
 
 // page routing
 app.get('/', routes.index);
@@ -54,9 +24,8 @@ app.get('/projects', routes.projects);
 app.post('/save_contact', routes.post_contact);
 app.get('/modesty', routes.modesty);
 app.get('/about', routes.about);
-app.get('/todo', todo.todo)
-app.post('/todo', todo.saveTodo)
-app.get('/users', user.list);
+app.get('/todo', routes.todo)
+app.post('/todo', routes.saveTodo)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
