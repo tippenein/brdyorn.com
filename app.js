@@ -40,6 +40,10 @@ app.configure('development', function(){
 });
 app.configure('production', function(){
   app.use(express.errorHandler());
+  app.use(function(req,res,next){
+    res.status(404);
+    res.render('404', {url: req.url, title: '404'});
+  })
   app.set('port', 80);
 });
 

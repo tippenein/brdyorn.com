@@ -27,9 +27,9 @@ input{
 #footer a {
   padding:1em;
 }
-
-a:hover{
+a:hover {
   color: #fc1501;
+  text-decoration: none;
 }
 
 #top-title a {
@@ -95,3 +95,4 @@ a:hover{
   padding: 0.5em;
   background-color: white;
 }
+
