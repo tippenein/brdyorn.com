@@ -2,22 +2,18 @@
  * static page routes go here 
  */
 
-var renderDirect = function(req, res, template, dict){
-  res.render(template, dict)
-}
-
 exports.index = function(req, res){
-  res.render('index', { title: 'BrdyOrn' });
+  res.render('index', { title: 'BrdyOrn', status:'' });
 };
 
 exports.contact = function(req, res){
-  res.render('contact', { title: 'Contact Brady Ouren'});
+  res.render('contact', { title: 'Contact Brady Ouren', status:''});
 };
 exports.about = function(req, res){
-  res.render('about', { title: 'About Brady Ouren'});
+  res.render('about', { title: 'About Brady Ouren', status:''});
 };
 exports.projects= function(req, res){
-  res.render('projects', { title: 'Projects'});
+  res.render('projects', { title: 'Projects', status: ''});
 };
 
 exports.post_contact = function(req, res){
@@ -26,6 +22,7 @@ exports.post_contact = function(req, res){
   message = req.body.message;
   console.log(name + " - " + email + " said: \n" + message);
   // send message to db 
+  res.render('index', {title: '', type: 'success', status: 'Thanks for the comments'})
 };
 
 exports.modesty = function(req, res){

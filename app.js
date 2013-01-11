@@ -22,11 +22,9 @@ exports.db = db
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 8080);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon(__dirname + '/public/imgs/favicon.ico'));
-  app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('AbRsd4gSFffvhy$sfgb5#rs'));
@@ -36,7 +34,13 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
+  app.use(express.errorHandler({ dumpExceptions:true, showStack:true }));
+  app.set('port', process.env.PORT || 8080);
+  app.use(express.logger('dev'));
+});
+app.configure('production', function(){
   app.use(express.errorHandler());
+  app.set('port', 80);
 });
 
 // page routing

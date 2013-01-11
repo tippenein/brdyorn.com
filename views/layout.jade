@@ -2,7 +2,7 @@ extends base
 
 block body
   #top-title.centered
-    a(href="/") BrdyOrn
+    a(href="/") BrdyOrn.com
   #top-subtitle.centered
     p Online home of Brady Ouren
   .navbar
@@ -21,9 +21,11 @@ block body
   block container
   .container
     .span12
-      .status-msg
-        p
-          
+      if status
+        if type=='success'
+          .status-msg.alert.alert-success=status
+        if type=='error'
+          .status-msg.alert.alert-error=status
     .row
       .span9
         .content
@@ -31,7 +33,7 @@ block body
       .span3
         .sidebar
           block sidebar
-          p wheee
+          p future home of sidebar content 
           
   #footer 
     a(href='/') Home
