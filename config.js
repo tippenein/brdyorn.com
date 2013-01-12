@@ -1,4 +1,17 @@
-/* app / express configurations live here */
+/* configurations live here */
+
+switch(process.env.NODE_ENV) {
+  case 'production':
+    exports.site = "brdyorn.com"
+    console.log('running on production server')
+    break
+  case 'development':
+    exports.site = "localhost"
+    console.log('running dev')
+    break
+  default:
+    break;
+};
 
 module.exports = function(app, express){
   app.configure(function(){

@@ -3,20 +3,24 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , app     = module.exports = express()
-  , http    = require('http')
-  /* routes */
-  , routes  = require('./routes/routes')
-  
-  /*db*/
-  , mongoose = require('mongoose')
-
+var express   = require('express')
+  , app       = module.exports = express()
+  , http      = require('http')
+  , routes    = require('./routes/routes')
+  , mongoose  = require('mongoose')
+  , db        = require('./db/conn')(mongoose)
 
 require('./config')(app, express)
-require('./db/conn')(mongoose)
 
-// page routing
+// controllers - load them
+//
+controllers = ["pages"]
+for (i in controllers) {
+  console.log("loading controller: " + controllers[i])
+  controller = require('./controllers/' + controllers[i]);
+  controller.setup(app)
+}
+/*
 app.get('/', routes.index);
 app.get('/contact', routes.contact);
 app.get('/projects', routes.projects);
@@ -25,7 +29,7 @@ app.get('/modesty', routes.modesty);
 app.get('/about', routes.about);
 app.get('/todo', routes.todo)
 app.post('/todo', routes.saveTodo)
-
+*/
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
