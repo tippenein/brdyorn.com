@@ -3,6 +3,7 @@
  */
 
 exports.index = function(req, res){
+  console.log(module)
   res.render('index', { title: 'BrdyOrn', status:'' });
 };
 
@@ -24,6 +25,7 @@ exports.post_contact = function(req, res){
   db.open(function(err, db){
     db.collection('test', function(err, collection){
       console.log('collection: ' + collection)
+      db.close()
     })
   })
   // send message to db 
@@ -36,14 +38,7 @@ exports.modesty = function(req, res){
 
 
 exports.todo = function(req, res){
-  // get tasks from file and render
   var todos = [];
-  console.log("todos:" + todos)
-  db.open(function(err, db) {
-    db.collection('test', function(err, collection) {
-      console.log(collection)
-    })
-  })
   res.render('todo', 
     { title: 'task list'
     , todos: todos 
@@ -51,14 +46,20 @@ exports.todo = function(req, res){
 }
 
 exports.saveTodo = function(req, res) {
-  // POST todo
-  // write new task to file
   var newTodo = {};
   newTodo = req.body['task'];
-  appendTodo(newTodo)
+  console.log('new todo: ' + newTodo)
+    db.open(function(err,db) {
+      db.collection('test', function(err, collection) {
+        console.log(collection);
+        db.close();
+      })
+    })
+  //appendTodo(newTodo)
   res.redirect("back");
 }
 
+/*
 function appendDb(item, todo) {
   db.open(function(err,db) {
     db.collection('todo', function(err, collection) {
@@ -69,3 +70,4 @@ function appendDb(item, todo) {
     })
   })
 }
+*/

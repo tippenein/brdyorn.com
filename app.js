@@ -8,14 +8,13 @@ var express = require('express')
   , http    = require('http')
   /* routes */
   , routes  = require('./routes/routes')
-  /* db connection */
+  
+  /*db*/
   , mongoose = require('mongoose')
 
-// change this to the real db after testing
-//mongoose.connect('mongodb://localhost/test');
-//db = mongoose.connection
 
 require('./config')(app, express)
+require('./db/conn')(mongoose)
 
 // page routing
 app.get('/', routes.index);
