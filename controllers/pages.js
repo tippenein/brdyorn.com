@@ -17,28 +17,34 @@ function Page(uri, locals){
 var pages = [];
 function page(uri, locals){
   // either passed a dict of locals or a string indicating the title
+  console.log(typeof locals)
   if (typeof locals === 'string') {
-    pages.push(new Page( uri, {title: locals} ));
+    pages.push(new Page( uri, 'test' )) //{title: locals} ));
   } else {
     pages.push(new Page( uri, locals));
   }
 }
-page('', 'BrdyOrn.com')
-page('contact', 'Contact')
-page('about', 'About Brady Ouren')
-page('projects', 'Projects - past and present')
-
 function route(app, page) {
   // give it a page instance and the app to route
-  app.get('/' + page.URI, function(req) {
+  console.log("routing page.uri: " + page.uri + " with title: " + page.locals)
+  app.get('/' + page.uri, function(req) {
     page.render(req)
   });
 };
 
 function setup(app) {
-  for (page  in pages) {
-    route(app, page)
+  for (i in pages) {
+    console.log(pages[i])
+    route(app, pages[i])
   };
 };
 
-//module.exports = { setup, Page }
+/* Static pages*/
+page('', 'BrdyOrn.com')
+page('contact', 'Contact')
+page('about', 'About Brady Ouren')
+page('projects', 'Projects - past and present')
+
+module.exports.setup = setup;
+console.log(pages)
+module.exports.staticPages = pages;

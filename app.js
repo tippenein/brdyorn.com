@@ -6,14 +6,11 @@
 var express   = require('express')
   , app       = module.exports = express()
   , http      = require('http')
-  , routes    = require('./routes/routes')
-  , mongoose  = require('mongoose')
-  , db        = require('./db/conn')(mongoose)
+  , db        = require('./db/conn').DbProvider
 
 require('./config')(app, express)
 
 // controllers - load them
-//
 controllers = ["pages"]
 for (i in controllers) {
   console.log("loading controller: " + controllers[i])
