@@ -1,54 +1,51 @@
 extends base
 
 block body
-  #top-title.centered
-    a(href="/") BrdyOrn.com
-  #top-subtitle.centered
-    p Online home of Brady Ouren
-  .navbar
-    .navbar-inner
-      .container
-        ul.nav.pull-left
-          li 
-            a(href="/") 
-              img(src="imgs/icon48.png")
-          li 
-            a(href="/about") About
-          li 
-            a(href="/projects") Projects
-          li 
-            a(href="/contact") Contact
   block container
-  .container
-    .span12
-      if status
-        if type=='success'
-          .status-msg.alert.alert-success=status
-        if type=='error'
-          .status-msg.alert.alert-error=status
-    .row
-      .span9
-        .content
-          block content
-      .span3
-        .sidebar
-          block sidebar
-          p future home of sidebar content 
-          
-  #footer 
-    a(href='/') Home
-    | |
-    a(href='/contact') Contact
-    | |
-    a(href='/about') About
-    | |
-    a(href='http://www.twitter.com/tippenein', target='_blank') twitter 
-      //img(src='imgs/social/32/twitter.png')
-    | |
-    a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank') linkedin
-      //img(src='imgs/social/32/linkedin.png')
-    | |
-    a(href='http://www.last.fm/user/planetplosion', target='_blank') last.fm
-      //img(src='imgs/social/32/lastfm.png')
-    | |
-    p Copyright &copy; Brady Ouren #{+new Date().getFullYear()}
+  .content.container
+    #top-title.centered
+      a(href="/") BrdyOrn.com
+    #top-subtitle.centered
+      p Online home of Brady Ouren
+    .navbar
+      .navbar-inner
+        .container
+          ul.nav.pull-left
+            li 
+              a(href="/") 
+                img(src="imgs/icon48.png")
+            li 
+              a(href="/about") About
+            li 
+              a(href="/projects") Projects
+            li 
+              a(href="/contact") Contact
+    if status
+      if type=='success'
+        .status-msg.alert.alert-success=status
+      if type=='error'
+        .status-msg.alert.alert-error=status
+    .container
+      .row
+        .span8
+          .content
+            block content
+        .span4
+          .sidebar
+            block sidebar
+  .clearfooter
+  footer.container
+    ul#footer
+      li
+        a(href='/') Home
+      li
+        a(href='/contact') Contact
+      li
+        a(href='/about') About
+      li
+        a(href='http://www.twitter.com/tippenein', target='_blank') twitter 
+      li
+        a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank') linkedin
+      li
+        a(href='http://www.last.fm/user/planetplosion', target='_blank') last.fm
+      p Copyright &copy; Brady Ouren #{+new Date().getFullYear()}

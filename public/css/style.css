@@ -1,21 +1,13 @@
-html{
-  height:100%;
-}
-
-body{
-  padding-bottom:10px;
+html, body {
   font-family: 'ABeeZee', sans-serif;
-  height:100%;
   font-size:1em;
   color:#0f0f0f;
   background: url(../imgs/tile.png)
 }
-
 p {
   font-family: 'Arial', sans-serif;
   font-size:1em;
 }
-
 hr.dashed{
   border-width: 0.5px;
   border: dashed;
@@ -23,76 +15,81 @@ hr.dashed{
 input{ 
   padding:0.5em;
 }
-
-#footer a {
-  padding:1em;
-}
-a:hover {
-  color: #fc1501;
+a {
   text-decoration: none;
 }
-
+a:hover {
+  text-decoration: none;
+  color: #fc1501;
+}
+.container {
+  min-height:100%;
+  position:relative;
+}
 #top-title a {
   color:#0f0f0f;
 }
-
 .navbar { 
   margin-bottom:0px; 
 }
-
-.container{
-  min-height:100%;
-  position:relative;
-  padding-left:50px;
+.centered {
+  text-align:center;
 }
-.centered {text-align:center;}
 #top-title {
   padding:0.5em;
   font-size:2.5em;  
 }
-
 #top-subtitle {
   text:#0b0b0b;
   font:1em italic;
 } 
-
 .container{
   position:relative;
+  min-height:100%;
 }
+textarea{
+  width:100%;
+}
+.content{
+  padding-bottom: 1em;
+}
+/* ----------SIDEBAR------------*/
+.sidebar h3,h4 {
+  color:#4a4a4a;
+}
+.sidebar {
+  position: relative;
+  text-align: center;
+  height:600px;
+  border-left: 1px dotted;
+  padding-bottom: 0em;
+}
+
 /* ----------FOOTER------------*/
 #footer {
+  
   color:#fafafa;
   padding-top: 0.5em;
   height: 60px;
   position: relative;
   text-align: center;
   background-color:#584E56;
+  margin: -1em 0 0 0;
 }
-
-
-.clearfooter{height:10px; clear:both;}
-
+#footer a {
+  padding: 0.5em;
+}
+.clearfooter{
+  clear:both;
+}
 #footer li{
   display: inline;
   list-style-type:none;
-  padding-right: 20px;
 }
 
-/* ----------SIDEBAR------------*/
-.sidebar h3,h4 {
-  color:#4a4a4a;
-}
-.sidebar {
-  color:#fafafa;
-  padding:1em;
-  background-color:#504d23;
-  height: 600px;:
-  float: right;
-  position: relative;
-}
 
+/* ---------- other ------------*/
 .project-col1 .project-col2 {
   padding: 0.5em;
   background-color: white;
 }
-

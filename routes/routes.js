@@ -22,12 +22,6 @@ exports.post_contact = function(req, res){
   email = req.body.email || 'None';
   message = req.body.message;
   console.log(name + " - " + email + " said: \n" + message);
-  db.open(function(err, db){
-    db.collection('test', function(err, collection){
-      console.log('collection: ' + collection)
-      db.close()
-    })
-  })
   // send message to db 
   res.render('index', {title: '', type: 'success', status: 'Thanks for the comments'})
 };
