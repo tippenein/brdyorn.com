@@ -6,9 +6,9 @@
 var express   = require('express')
   , app       = module.exports = express()
   , http      = require('http')
-  , db        = require('../db/conn').DbProvider
+  , db        = require('./controllers/db').DbProvider
   , routes    = require('./controllers/routes')
-  , errors    = require('./errors')
+  , errors    = require('./errors');
 
 require('../config')(app, express)
 // controllers - load them

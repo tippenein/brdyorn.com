@@ -1,8 +1,16 @@
 /* static pages provider */
 
-function Page(uri, locals){
-  this.uri = uri;
+var pages = [];
+
+function Page(uri, locals, type){
+  
+  this.uri    = uri;
   this.locals = locals;
+  if (typeof type === 'undefined') {
+    this.type   = 'static';
+  } else {
+    this.type = type;
+  }
   if (uri === '') {
     this.view = 'index.jade';
   } else {
@@ -14,7 +22,7 @@ function Page(uri, locals){
   }
 };
 
-var pages = [];
+
 
 function page(uri, locals){
   // either passed a dict of locals or a string indicating the title
@@ -27,9 +35,15 @@ function page(uri, locals){
 
 function route(app, page) {
   // give it a page instance and the app to route
-  app.get('/' + page.uri, function(req) {
-    page.render(req)
-  });
+  if (page.type === 'static') { 
+    app.get('/' + page.uri, function(req) {
+      page.render(req)
+    });
+  } else {
+    app.post('/' + page.uri, function(req) {
+      page.render(req)
+    });
+  };
 };
 
 function setup(app) {
@@ -42,6 +56,7 @@ function setup(app) {
 /* Static pages*/
 page('', 'BrdyOrn.com')
 page('contact', 'Contact')
+page('save_contact', 'Contact', 'post')
 page('about', 'About Brady Ouren')
 page('projects', 'Projects - past and present')
 
