@@ -17,7 +17,7 @@ switch(process.env.NODE_ENV) {
 module.exports = function(app, express){
   app.configure(function(){
     console.log('dirname -----------> ' + __dirname)
-    app.set('views', __dirname + '/views');
+    app.set('views', __dirname + '/app/views');
     app.set('view engine', 'jade');
     app.use(express.favicon(__dirname + '/public/imgs/favicon.ico'));
     app.use(express.bodyParser());

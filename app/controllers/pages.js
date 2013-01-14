@@ -15,6 +15,7 @@ function Page(uri, locals){
 };
 
 var pages = [];
+
 function page(uri, locals){
   // either passed a dict of locals or a string indicating the title
   if (typeof locals === 'string') {
@@ -23,6 +24,7 @@ function page(uri, locals){
     pages.push(new Page( uri, locals));
   }
 }
+
 function route(app, page) {
   // give it a page instance and the app to route
   app.get('/' + page.uri, function(req) {
@@ -32,7 +34,7 @@ function route(app, page) {
 
 function setup(app) {
   for (i in pages) {
-    console.log(pages[i])
+    console.log(pages[i].locals)
     route(app, pages[i])
   };
 };
@@ -44,4 +46,3 @@ page('about', 'About Brady Ouren')
 page('projects', 'Projects - past and present')
 
 exports.setup = setup;
-console.log(pages)
