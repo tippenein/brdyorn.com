@@ -1,10 +1,11 @@
 /* db connection exports*/
+var Db      = require('mongodb').Db
+var Server  = require('mongodb').Server
+var Connection  = require('mongodb').Connection
 
-module.exports = function(mongoose){
-  mongoose.connect('mongodb://localhost/test');
-  var db = mongoose.connection
-  db.on('error', console.error.bind(console, 'connection error:'));
-  db.once('open', function callback () {
-    console.log('connected to db')
-  });
-}
+DbProvider = function(host, port) {
+  this.db = new Db('test', new Server(host, port, { auto_reconnect: true }, {}));
+  this.db.open(function(){});
+};
+
+exports.DbProvider = DbProvider;
