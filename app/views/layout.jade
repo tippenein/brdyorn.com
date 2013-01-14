@@ -3,23 +3,17 @@ extends base
 block body
   block container
   .content.container
-    #top-title.centered
-      a(href="/") BrdyOrn.com
-    #top-subtitle.centered
-      p Online home of Brady Ouren
-    .navbar
-      .navbar-inner
-        .container
-          ul.nav.pull-left
-            li 
-              a(href="/") 
-                img(src="imgs/icon48.png")
-            li 
-              a(href="/about") About
-            li 
-              a(href="/projects") Projects
-            li 
-              a(href="/contact") Contact
+    header
+      #top-title.centered
+        a(href="/") BrdyOrn.com
+      #top-subtitle.centered
+        p Online home of Brady Ouren
+      nav.centered
+        a(href="/") Home
+        //a(href="/about") About
+        a(href="/projects") Projects
+        a(href="/contact") Contact
+        //a(href="/resume") Resumé
     if status
       if type=='success'
         .status-msg.alert.alert-success=status
@@ -27,25 +21,35 @@ block body
         .status-msg.alert.alert-error=status
     .container
       .row
-        .span8
+        .span8.offset2
           .content
             block content
-        .span4
-          .sidebar
-            block sidebar
   .clearfooter
   footer.container
-    ul#footer
-      li
-        a(href='/') Home
-      li
-        a(href='/contact') Contact
-      li
-        a(href='/about') About
-      li
-        a(href='http://www.twitter.com/tippenein', target='_blank') twitter 
-      li
-        a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank') linkedin
-      li
-        a(href='http://www.last.fm/user/planetplosion', target='_blank') last.fm
-      p Copyright &copy; Brady Ouren #{+new Date().getFullYear()}
+    #footer
+      .row
+        ul.pull-left
+          li
+            a(href='/') Home
+          li
+            a(href='/about') About
+          li
+            a(href='/projects') Projects
+          li
+            a(href='/contact') Contact
+
+        ul.pull-right.social-icons
+          li
+            a(href='http://www.github.com/tippenein', target='_blank') 
+              img(src='imgs/social/32/github_round.png')
+          li
+            a(href='http://www.twitter.com/tippenein', target='_blank')
+              img(src='imgs/social/32/twitter_round.png')
+          li
+            a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank')
+              img(src='imgs/social/32/linkedin_round.png')
+          li
+            a(href='http://www.last.fm/user/planetplosion', target='_blank') 
+              img(src='imgs/social/32/lastfm_round.png')
+          | <br><br>
+          p.copyright.centered Copyright &copy; Brady Ouren #{+new Date().getFullYear()}
