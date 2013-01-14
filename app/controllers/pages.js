@@ -2,15 +2,10 @@
 
 var pages = [];
 
-function Page(uri, locals, type){
-  
+function Page(uri, locals){
   this.uri    = uri;
   this.locals = locals;
-  if (typeof type === 'undefined') {
-    this.type   = 'static';
-  } else {
-    this.type = type;
-  }
+  
   if (uri === '') {
     this.view = 'index.jade';
   } else {
@@ -22,9 +17,7 @@ function Page(uri, locals, type){
   }
 };
 
-
-
-function page(uri, locals){
+function page(uri, locals, type){
   // either passed a dict of locals or a string indicating the title
   if (typeof locals === 'string') {
     pages.push(new Page( uri, {title:locals, status:''})) 
@@ -35,29 +28,46 @@ function page(uri, locals){
 
 function route(app, page) {
   // give it a page instance and the app to route
-  if (page.type === 'static') { 
-    app.get('/' + page.uri, function(req) {
-      page.render(req)
-    });
-  } else {
-    app.post('/' + page.uri, function(req) {
-      page.render(req)
-    });
-  };
-};
-
-function setup(app) {
-  for (i in pages) {
-    console.log(pages[i].locals)
-    route(app, pages[i])
-  };
+  app.get('/' + page.uri, function(req) {
+    page.render(req)
+  });
 };
 
 /* Static pages*/
 page('', 'BrdyOrn.com')
 page('contact', 'Contact')
-page('save_contact', 'Contact', 'post')
 page('about', 'About Brady Ouren')
 page('projects', 'Projects - past and present')
 
-exports.setup = setup;
+exports.setup = function(app) {
+  /*setup static pages*/
+  for (i in pages) {
+    console.log(pages[i].locals)
+    route(app, pages[i])
+  };
+
+  /*other pages go here*/
+  app.post('/save_contact', function(req, res){
+    name = req.body.name || 'Anonymous';
+    email = req.body.email || 'None';
+    message = req.body.message;
+    console.log(name + " - " + email + " said: \n" + message);
+    // send message to db 
+    res.render('index', {title: '', type: 'success', status: 'Thanks for the comments'})
+  });
+
+  app.get('/todo', function(req, res){
+    var todos = [];
+    res.render('todo', 
+      { title: 'task list'
+      , todos: todos 
+      });
+  });
+
+  app.post('save_todo', function(req, res) {
+    var newTodo = {};
+    newTodo = req.body.task;
+    console.log('new todo: ' + newTodo)
+    res.redirect("back");
+  });
+};
