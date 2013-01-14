@@ -10,11 +10,13 @@ switch(process.env.NODE_ENV) {
     console.log('running dev')
     break
   default:
+    console.log('running dev')
     break;
 };
 
 module.exports = function(app, express){
   app.configure(function(){
+    console.log('dirname -----------> ' + __dirname)
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
     app.use(express.favicon(__dirname + '/public/imgs/favicon.ico'));
