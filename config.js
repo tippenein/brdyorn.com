@@ -1,4 +1,5 @@
 /* configurations live here */
+var stylus = require('stylus')
 
 switch(process.env.NODE_ENV) {
   case 'production':
@@ -24,6 +25,10 @@ module.exports = function(app, express){
     app.use(express.cookieParser('AbRsd4gSFffvhy$sfgb5#rs'));
     app.use(express.session());
     app.use(app.router);
+    app.use(stylus.middleware({
+      src:__dirname + '/public',
+      compress:true
+    }));
     app.use(express.static(__dirname + '/public'));
   });
   //Dev settings

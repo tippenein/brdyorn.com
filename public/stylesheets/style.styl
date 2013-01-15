@@ -1,0 +1,150 @@
+/*
+* nib adds browser specific css
+*/
+/* fonts */
+primary-font-family = 'ABeeZee', sans-serif
+second-font-family  = 'Arial', sans-serif
+/* colors */
+main-bg         = #fefefe
+
+primary-light   = #b7cf96
+primary-dark    = #7e9e4f
+
+secondary-light = #fc1501
+secondary-dark  = #60160a
+
+link-hover      = #fc1501
+link            = #60160a
+
+/* begin normal css */
+html, body
+  font-family: 'ABeeZee', sans-serif;
+  font-size:1em;
+  color:#0f0f0f;
+  background-color: main-bg
+
+
+p
+  font-family: 'Arial', sans-serif
+  font-size:1em;
+
+hr.dashed
+  border-width: 0.5px
+  border: dashed
+
+input
+  padding:0.5em
+
+a
+  text-decoration: none
+  color: link
+
+a:hover
+  text-decoration: none
+  color: link-hover
+
+.container 
+  min-height:100%
+  position:relative
+
+#top-title a 
+  color:#0f0f0f
+
+header nav 
+  display: block
+  clear: both
+  margin-top: 6px
+  padding-top: 6px
+  white-space: nowrap
+
+header nav a 
+  background-color: primary-dark
+  color:#fafafa
+  margin:5px
+  padding: 5px
+  border-radius: 2px
+  font-size:1.5em
+
+
+header nav a:hover, a.current
+  background-color: secondary-dark
+
+.navbar
+  margin-bottom:0px
+
+.centered 
+  text-align:center
+
+#top-title 
+  padding:0.5em
+  font-size:2.5em
+
+#top-subtitle
+  text:#0b0b0b
+  font:1em italic
+
+.container
+  position:relative
+  min-height:100%
+
+textarea
+  width:100%
+
+.content
+  padding-bottom: 1em
+
+/* ----------SIDEBAR------------*/
+.sidebar 
+  position: relative
+  text-align: center
+  height:600px
+  border-left: 1px dotted
+  padding-bottom: 0em
+
+
+/* ----------FOOTER------------*/
+#footer 
+  color:#fafafa
+  padding-top: 1em
+  padding-left: 25px
+  padding-right: 25px
+  height: 100px
+  position: relative
+  background-color: primary-dark
+
+#footer ul.pull-left li
+  list-style-type: none
+  display: list-item
+
+
+header 
+  margin-bottom: 5px
+
+#footer p.copyright 
+  padding-top: 8px
+  margin-bottom: 5px
+
+#footer a 
+  color:#60160a
+  padding: 0.5em
+
+#footer a:hover 
+  color: link-hover
+
+.clearfooter
+  clear:both;
+
+#footer li
+  display: inline
+  list-style-type:none
+
+/* ---------- other ------------*/
+.project-col1, .project-col2 
+  padding: 0.5em
+  background-color: white
+
+.project-text
+  padding:1em
+  margin-top:1em
+  background-color:primary-light
+
