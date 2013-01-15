@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  title=title
+  h1=title
+  div#upload
+    form(action='/photo_post', enctype='multipart/form-data', method='post')
+      | Upload a photo for all to see
+      | <br>
+      input(type='file', name='image')
+      input(type='submit', name='upload')
+
+

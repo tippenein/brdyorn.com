@@ -1,5 +1,7 @@
 /* static pages provider */
 
+var formidable = require('formidable')
+
 var pages = [];
 
 function Page(uri, locals){
@@ -38,6 +40,8 @@ page('', 'BrdyOrn.com')
 page('contact', 'Contact')
 page('about', 'About Brady Ouren')
 page('projects', 'Projects - past and present')
+page('photo_upload', 'Upload your Photo Publicly')
+page('photo_show', 'Uploaded Photo')
 
 exports.setup = function(app) {
   /*setup static pages*/
@@ -55,6 +59,22 @@ exports.setup = function(app) {
     // send message to db 
     res.render('index', {title: '', type: 'success', status: 'Thanks for the comments'})
   });
+  
+  app.post('/photo_post', function(req, res){
+    var form = new formidable.IncomingForm
+    form.uploadDir = __dirname + '/public/imgs/'
+    form.parse(req, function(err, fields, files){
+      if (err) {
+        console.log('error happened')
+        next(err);
+      } else {
+        console.log('\nuploaded %s to %s'
+          , files.image.filename
+          , files.image.path);
+        res.render('photo_show', {title:'', type: 'success', status:'Enjoy your photo until someone else uploads one'})
+      }
+    }); 
+  });
 
   app.get('/todo', function(req, res){
     var todos = [];
@@ -63,7 +83,7 @@ exports.setup = function(app) {
       , todos: todos 
       });
   });
-
+  
   app.post('save_todo', function(req, res) {
     var newTodo = {};
     newTodo = req.body.task;
