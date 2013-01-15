@@ -1,24 +1,24 @@
 /*
 * nib adds browser specific css
 */
+
 /* fonts */
-primary-font-family = 'ABeeZee', sans-serif
+@import url('http://fonts.googleapis.com/css?family=Droid\+Sans')
+header-font         = 'Droid Sans', sans-serif
+primary-font-family = 'Droid Sans', sans-serif
 second-font-family  = 'Arial', sans-serif
 /* colors */
 main-bg         = #fefefe
-
 primary-light   = #b7cf96
 primary-dark    = #7e9e4f
-
 secondary-light = #fc1501
 secondary-dark  = #60160a
-
 link-hover      = #fc1501
 link            = #60160a
 
 /* begin normal css */
 html, body
-  font-family: 'ABeeZee', sans-serif;
+  font-family: primary-font-family 
   font-size:1em;
   color:#0f0f0f;
   background-color: main-bg
@@ -46,6 +46,9 @@ a:hover
 .container 
   min-height:100%
   position:relative
+
+#top-title
+  font-family: header-font
 
 #top-title a 
   color:#0f0f0f
