@@ -2,7 +2,7 @@
 html,body{font-family:'Droid Sans',sans-serif;font-size:1em;color:#0f0f0f;background-color:#fefefe}
 p{font-family:'Arial',sans-serif;font-size:1em}
 hr.dashed{border-width:.5px;border:dashed}
-input{padding:.5em}
+input{margin-top:1em;padding:.5em}
 a{text-decoration:none;color:#60160a}
 a:hover{text-decoration:none;color:#fc1501}
 .container{min-height:100%;position:relative}
@@ -10,7 +10,7 @@ a:hover{text-decoration:none;color:#fc1501}
 #top-title a{color:#0f0f0f}
 header{margin-bottom:5px}
 header nav{display:block;clear:both;margin-top:6px;padding-top:6px;white-space:nowrap}
-header nav a{background-color:#7e9e4f;color:#fafafa;margin:5px;padding:5px;border-radius:2px;font-size:1.5em}
+header nav a{background-color:#7e9e4f;color:#fafafa;margin:6px;padding:6px;border-top-left-radius:14px;border-bottom-right-radius:14px;display:inline-block;font-size:25px;line-height:25px}
 header nav a:hover,a.current{background-color:#60160a}
 .navbar{margin-bottom:0}
 .centered{text-align:center}
