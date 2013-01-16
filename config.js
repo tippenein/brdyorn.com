@@ -42,7 +42,7 @@ module.exports = function(app, express){
     app.use(express.errorHandler());
     app.use(function(req,res,next){
       res.status(404);
-      res.render('404', {url: req.url});
+      res.render('404', {url: req.url, title: '404 - page cannot be found'});
     })
     app.set('port', 80);
   });
