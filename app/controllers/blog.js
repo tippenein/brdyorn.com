@@ -1,4 +1,4 @@
-var db = require('./db');
+//var db = require('./db');
 
 function route(app, _route) {};
 function setup(app) {};

@@ -6,10 +6,23 @@
 var express   = require('express')
   , app       = module.exports = express()
   , http      = require('http')
-  , db        = require('./controllers/db').DbProvider
-  , errors    = require('./errors');
+  , poet      = require('poet')(app)
+  , errors    = require('./errors') 
+  , mongoose  = require('mongoose')
+  //, db        = mongoose.connect('mongodb://localhost/test')
 
+/*  
+poet.set({
+  posts:'./_posts',
+  postsPerPage: 6,
+}).createPostRoute()
+  .createPageRoute()
+  .createTagRoute()
+  .createCategoryRoute()
+  .init() // takes a callback if need to run anything on startupPageRoute()
+*/
 require('../config')(app, express)
+
 // controllers - load them
 controllers = ["pages", "blog"]
 for (i in controllers) {
