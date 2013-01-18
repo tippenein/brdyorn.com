@@ -42,6 +42,7 @@ page('about', 'About Brady Ouren')
 page('projects', 'Projects - past and present')
 page('photo_upload', 'Upload your Photo Publicly')
 page('photo_show', 'Uploaded Photo')
+page('blog', 'Blog - BrdyOrn.com')
 
 exports.setup = function(app) {
   /*setup static pages*/

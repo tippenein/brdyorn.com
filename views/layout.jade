@@ -10,8 +10,8 @@ block body
         p Online home of Brady Ouren
       nav.centered
         a(href="/") Home
-        //a(href="/about") About
         a(href="/projects") Projects
+        a(href="/blog") Blog
         a(href="/contact") Contact
         //a(href="/resume") Resumé
     if status
@@ -24,6 +24,8 @@ block body
         .span8.offset2
           .content
             block content
+        .span2
+          block nav
   .clearfooter
   footer.container
     #footer

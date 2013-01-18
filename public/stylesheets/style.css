@@ -1,6 +1,8 @@
 @import url("http://fonts.googleapis.com/css?family=Droid\+Sans");
+@import url("http://fonts.googleapis.com/css?family=Arimo");
+@font-face{font-family:'liberationSans';src:url("./lib/liberation_sans/LiberationSans-Regular.ttf")}
 html,body{font-family:'Droid Sans',sans-serif;font-size:1em;color:#0f0f0f;background-color:#fefefe}
-p{font-family:'Arial',sans-serif;font-size:1em}
+p{font-family:'Arimo',sans-serif;font-size:1em}
 hr.dashed{border-width:.5px;border:dashed}
 input{margin-top:1em;padding:.5em}
 a{text-decoration:none;color:#60160a}
@@ -18,7 +20,6 @@ header nav a:hover,a.current{background-color:#60160a}
 #top-subtitle{text:#0b0b0b;font:1em italic}
 .content{background-color:#fefefe}
 .container{position:relative;min-height:100%}
-blockquote{background:#fff;border-radius:2px;border-left-style:3px;font-style:italic}
 textarea{width:100%}
 .content{padding-bottom:1em}
 .sidebar{position:relative;text-align:center;height:600px;border-left:1px dotted;padding-bottom:0}
@@ -29,8 +30,11 @@ textarea{width:100%}
 #footer a:hover{color:#fc1501}
 .clearfooter{clear:both}
 #footer li{display:inline;list-style-type:none}
+blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
+pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview{border:1px}
 .blogentry{color:#0f0f0f;background-color:#b7cf96;border-radius:4px;padding-left:6px}
+.blogcontent{color:#0f0f0f;background-color:#fefefe;border-radius:4px}
 .blogentry p{line-height:1em;padding:1em;margin:1em}
 .tags{background-color:#60160a;border-radius:4px}
 .tag{display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#7e9e4f;border-radius:4px}

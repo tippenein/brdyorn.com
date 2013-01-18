@@ -4,9 +4,16 @@
 
 /* fonts */
 @import url('http://fonts.googleapis.com/css?family=Droid\+Sans')
+@import url('http://fonts.googleapis.com/css?family=Arimo')
+@font-face
+  font-family: 'liberationSans'
+  src: url('./lib/liberation_sans/LiberationSans-Regular.ttf')
+
 header-font         = 'Droid Sans', sans-serif
 primary-font-family = 'Droid Sans', sans-serif
 second-font-family  = 'Arial', sans-serif
+liberationSans      = 'liberationSans', sans-serif
+arimo               = 'Arimo', sans-serif
 /* colors */
 main-bg         = #fefefe
 primary-light   = #b7cf96
@@ -26,7 +33,7 @@ html, body
   background-color: main-bg
 
 p
-  font-family: 'Arial', sans-serif
+  font-family: arimo
   font-size:1em;
 
 hr.dashed
@@ -99,11 +106,6 @@ header nav a:hover, a.current
   position:relative
   min-height:100%
 
-blockquote 
-  background: white
-  border-radius:2px
-  border-left-style:3px
-  font-style: italic
 textarea
   width:100%
 
@@ -153,6 +155,16 @@ textarea
   list-style-type:none
 
 /* ------------------blog---------------*/
+blockquote 
+  background: white 
+  border-left-style: 3px
+  font-style: italic
+  border-left: 6px solid #111
+
+pre
+  background-color:#1f1c1f
+  color:#fafafa
+
 .blog-preview
   border:1px
 
@@ -161,6 +173,11 @@ textarea
   background-color: primary-light
   border-radius:4px
   padding-left:6px
+
+.blogcontent
+  color:#0f0f0f
+  background-color:main-bg
+  border-radius:4px
 
 .blogentry p
   line-height:1em
