@@ -11,16 +11,12 @@ var express   = require('express')
   , mongoose  = require('mongoose')
   //, db        = mongoose.connect('mongodb://localhost/test')
 
-/*  
-poet.set({
-  posts:'./_posts',
-  postsPerPage: 6,
-}).createPostRoute()
+poet
+  .createPostRoute()
   .createPageRoute()
   .createTagRoute()
   .createCategoryRoute()
   .init() // takes a callback if need to run anything on startupPageRoute()
-*/
 require('../config')(app, express)
 
 // controllers - load them

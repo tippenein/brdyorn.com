@@ -16,7 +16,9 @@ header nav a:hover,a.current{background-color:#60160a}
 .centered{text-align:center}
 #top-title{padding:.5em;font-size:2.5em}
 #top-subtitle{text:#0b0b0b;font:1em italic}
+.content{background-color:#fefefe}
 .container{position:relative;min-height:100%}
+blockquote{background:#fff;border-radius:2px;border-left-style:3px;font-style:italic}
 textarea{width:100%}
 .content{padding-bottom:1em}
 .sidebar{position:relative;text-align:center;height:600px;border-left:1px dotted;padding-bottom:0}
@@ -27,5 +29,13 @@ textarea{width:100%}
 #footer a:hover{color:#fc1501}
 .clearfooter{clear:both}
 #footer li{display:inline;list-style-type:none}
+.blog-preview{border:1px}
+.blogentry{color:#0f0f0f;background-color:#b7cf96;border-radius:4px;padding-left:6px}
+.blogentry p{line-height:1em;padding:1em;margin:1em}
+.tags{background-color:#60160a;border-radius:4px}
+.tag{display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#7e9e4f;border-radius:4px}
+.tags h5{color:#fff}
+.tag a{color:#fff}
+.tag a:hover{color:#fc1501}
 .project-col1,.project-col2{padding:.5em;background-color:#fff}
 .project-text{padding:1em;margin-top:1em;background-color:#b7cf96}
