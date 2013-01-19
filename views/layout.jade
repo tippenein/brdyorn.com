@@ -9,10 +9,22 @@ block body
       #top-subtitle.centered
         p Online home of Brady Ouren
       nav.centered
-        a(href="/") Home
-        a(href="/projects") Projects
-        a(href="/blog") Blog
-        a(href="/contact") Contact
+        a(href="/", title='home') Home
+        a(href="/projects", title='projects') Projects
+        a(href="/blog", title='blog') Blog
+        a(href="/contact", title='contact') Contact
+        
+        script
+          $(function() {
+              return $('header nav a').each(function(index, link) {
+                var $link = $(link)
+                var href = $link.attr('href')
+                var URI = document.location.pathname
+                if (href === URI) {
+                  $link.addClass('current')
+                } else {$link.removeClass('current')}
+              })
+            })
         //a(href="/resume") Resumé
     if status
       if type=='success'
@@ -34,7 +46,7 @@ block body
           li
             a(href='/') Home
           li
-            a(href='/about') About
+            a(href='/blog') Blog
           li
             a(href='/projects') Projects
           li
@@ -56,5 +68,3 @@ block body
           | <br><br>
           p.copyright.centered Copyright &copy; Brady Ouren #{+new Date().getFullYear()}
 
-  append jsincludes
-    script(src='js/main.js')
