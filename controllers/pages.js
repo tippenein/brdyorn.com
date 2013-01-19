@@ -60,7 +60,7 @@ exports.setup = function(app) {
     // send message to db 
     res.render('index', {title: '', type: 'success', status: 'Thanks for the comments'})
   });
-  
+
   app.post('/photo_post', function(req, res){
     var form = new formidable.IncomingForm
     form.uploadDir = __dirname + '/public/imgs/'
@@ -84,7 +84,7 @@ exports.setup = function(app) {
       , todos: todos 
       });
   });
-  
+
   app.post('save_todo', function(req, res) {
     var newTodo = {};
     newTodo = req.body.task;

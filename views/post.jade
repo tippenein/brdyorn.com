@@ -1,14 +1,13 @@
 extends layout
 
-block contenti
-  div.post
-    h1
-      a(href=post.url)
-        = post.title
+block content
+  .post
+    h3
+      a(href=#{post.url}) #{post.title}
     span.date #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
-    div.post.content
+    .post.content
       != post.content
-    div.tags
+    .tags
       - each tag in post.tags
         a(href=tagUrl(tag))
           span.label.label-info #{tag}

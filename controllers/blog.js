@@ -1,11 +1,13 @@
 /* poet blog routing*/
 
-module.exports.setup = function(app) {
+exports.setup = function(app) {
   app.get( '/post/:post', function ( req, res ) {
     var post = req.poet.getPost( req.params.post );
     if ( post ) {
+      console.log(post)
       res.render( 'post', { post: post }); 
     } else {
+      console.log(post)
       res.send(404);
     }
   });
@@ -31,8 +33,8 @@ module.exports.setup = function(app) {
   });
 
   app.get( '/page/:page', function ( req, res ) {
-    var page = req.params.page,
-      lastPost = page * 3
+    var page = req.params.page
+      , lastPost = page * 3
     res.render( 'page', {
       posts : req.poet.getPosts( lastPost - 3, lastPost ),
       page : page

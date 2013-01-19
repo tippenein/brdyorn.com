@@ -7,18 +7,21 @@ var express   = require('express')
   , app       = module.exports = express()
   , http      = require('http')
   , poet      = require('poet')(app)
-  , errors    = require('./errors') 
+  //, errors    = require('./errors') 
   , mongoose  = require('mongoose')
   , stylus    = require('stylus')
   //, db        = mongoose.connect('mongodb://localhost/test')
 
-console.log('dirname ============' + __dirname)  
 poet
   .createPostRoute()
   .createPageRoute()
   .createTagRoute()
   .createCategoryRoute()
-  .init() // takes a callback if need to run anything on startupPageRoute()
+  .init(function(locals) {
+    locals.postList.forEach(function ( post ) {
+      console.log('loading post: ' + post.url)
+    })
+  })
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -28,7 +31,6 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser('AbRsd4gSFffvhy$sfgb5#rs'));
   app.use(express.session());
-  app.use(poet.middleware());
   app.use(app.router);
   app.use(stylus.middleware({
     src:__dirname + '/public',

@@ -33,10 +33,10 @@ textarea{width:100%}
 blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
 pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview{border:1px}
-.blogentry{color:#0f0f0f;background-color:#b7cf96;border-radius:4px;padding-left:6px}
+.blogentry{color:#0f0f0f;background-color:#b7cf96;border-radius:4px;padding-left:6px;padding-right:6px}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;border-radius:4px}
 .blogentry p{line-height:1em;padding:1em;margin:1em}
-.tags{background-color:#60160a;border-radius:4px}
+.tags{border-top:solid 6px;background-color:#60160a;border-radius:4px;padding-bottom:2px}
 .tag{display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#7e9e4f;border-radius:4px}
 .tags h5{color:#fff}
 .tag a{color:#fff}
