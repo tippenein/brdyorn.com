@@ -5,6 +5,7 @@ html,body{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Ne
 p{font-family:'Arimo',sans-serif;font-size:1em}
 h1,h2,h3,h4,h5,h6{font-family:'Tertre bold',sans-serif;color:#10051c}
 hr.dashed{border-width:.5px;border:dashed}
+.clear{clear:both}
 input{margin-top:1em;margin-right:1em;padding:.5em}
 textarea{width:90%}
 a{text-decoration:none;color:#d415a3}
@@ -24,14 +25,16 @@ header nav a:hover,a.current{color:#728127;background-color:#10051c;border-botto
 .content{background-color:#fefefe}
 .container{position:relative;min-height:100%}
 .content{padding-bottom:0}
-.sidebar{position:relative;text-align:center;height:600px;border-left:1px dotted;padding-bottom:0}
-#footer{color:#fafafa;padding-top:1em;padding-left:200px;padding-right:200px;height:100px;position:relative;background-color:#10051c}
-#footer ul.pull-left li{list-style-type:none;display:list-item}
-#footer p.copyright{padding-top:8px;margin-bottom:5px}
+footer{color:#fafafa;padding-top:1em;padding-left:20%;padding-right:20%;height:100%;position:relative;background-color:#10051c}
 #footer a{color:#fff;padding:.5em}
+.footer-nav a{font-size:120%}
 #footer a:hover{color:#d4b515}
-.clearfooter{clear:both}
-#footer li{display:inline;list-style-type:none}
+#footer ul{margin:0;padding:0}
+#footer li{margin:0;list-style-type:none;margin:0;padding:2px 0 2px 0}
+.footer-nav ul{list-style-type:none;display:list-item}
+.social-icons ul{list-style-type:none}
+.social-icons li{display:inline;padding-top:4px}
+p.license{padding-left:20%;padding-top:4px;margin-bottom:4px;font-size:70%}
 blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
 pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview{border:1px}

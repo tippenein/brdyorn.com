@@ -38,11 +38,11 @@ block body
             block content
         .span2
           block nav
-  .clearfooter
+  .clear
   footer.container
-    #footer
-      .row
-        ul.pull-left
+    .span12#footer.row
+      .span4.footer-nav
+        ul
           li
             a(href='/') Home
           li
@@ -51,8 +51,10 @@ block body
             a(href='/projects') Projects
           li
             a(href='/contact') Contact
-
-        ul.pull-right.social-icons
+        .clear
+        | <br>
+      .span4.social-icons
+        ul
           li
             a(href='http://www.github.com/tippenein', target='_blank') 
               img(src='imgs/social/32/github_round.png')
@@ -66,5 +68,11 @@ block body
             a(href='http://www.last.fm/user/planetplosion', target='_blank') 
               img(src='imgs/social/32/lastfm_round.png')
           | <br><br>
-          p.copyright.centered Copyright &copy; Brady Ouren #{+new Date().getFullYear()}
+      .clear
+    .span8.row.license
+      p.license This work is licensed under a 
+        a( rel="license", href="http://creativecommons.org/licenses/by-sa/3.0/") Creative Commons Attribution-ShareAlike 3.0 Unported License.
+        a(rel="license", href="http://creativecommons.org/licenses/by-sa/3.0/")
+        | <br>  
+        img( alt="Creative Commons License", style="border-width:0", src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png")
 

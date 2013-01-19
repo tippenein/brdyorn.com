@@ -66,6 +66,8 @@ hr.dashed
   border-width: 0.5px
   border: dashed
 
+.clear
+  clear:both;
 
 input
   margin-top:1em
@@ -145,47 +147,52 @@ header nav a:hover, a.current
 .content
   padding-bottom: 0em
 
-/* ----------SIDEBAR------------*/
-.sidebar 
-  position: relative
-  text-align: center
-  height:600px
-  border-left: 1px dotted
-  padding-bottom: 0em
-
-
 /* ----------FOOTER------------*/
-#footer 
+footer 
   color:#fafafa
   padding-top: 1em
-  padding-left: 200px
-  padding-right: 200px
-  height: 100px
+  padding-left: 20% 
+  padding-right: 20%
+  height: 100%
   position: relative
   background-color: footer-bg
 
-#footer ul.pull-left li
-  list-style-type: none
-  display: list-item
-
-
-#footer p.copyright 
-  padding-top: 8px
-  margin-bottom: 5px
-
-#footer a 
+#footer a
   color: footer-link
   padding: 0.5em
+
+.footer-nav a
+  font-size: 120%
 
 #footer a:hover 
   color: footer-link-hover
 
-.clearfooter
-  clear:both;
+#footer ul
+  margin:0
+  padding:0
 
 #footer li
-  display: inline
+  margin:0
   list-style-type:none
+  margin: 0
+  padding: 2px 0 2px 0
+
+.footer-nav ul
+  list-style-type:none
+  display: list-item
+
+.social-icons ul
+  list-style-type:none
+
+.social-icons li
+  display: inline
+  padding-top: 4px
+
+p.license
+  padding-left:20%
+  padding-top: 4px
+  margin-bottom: 4px
+  font-size:70%
 
 /* ------------------blog---------------*/
 blockquote 
