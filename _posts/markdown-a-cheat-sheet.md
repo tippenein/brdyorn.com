@@ -5,15 +5,10 @@
   }}}
 
 Until you find yourself using markdown frequently, it's hard to remember the syntax, so I'm compiling a list of the mistakes I usually made/make.
-[daringfireball.net](http://daringfireball.net/projects/markdown/syntax) was where I looked first, however it has _everything_
+[Daringfireball.net](http://daringfireball.net/projects/markdown/syntax) was where I looked first, however it has _everything_, which can be overwelming.
 
-
-Blockquotes simply use '>' and can contain anything you'd usually use (ex. ##, ===, etc)
-
-Links use square-brackets for the links name and parens for the href with an optional title 'argument'
-
-    [anchor name](http://www.link.com "title")
-
-That would give you <pre><a href="http://www.link.com" title="title">anchor name</a></pre>
-
-> Unordered lists use asterisks, pluses, and hyphens — interchangably — as list markers
+- Blockquotes simply use '>' and can contain anything you'd usually use (ex. ##, ===, etc)  
+- Links use square-brackets for the links name and parens for the href with an optional title 'argument' `[anchor name](http://www.link.com "title")`  
+- Unordered lists use * + or - 
+- a code block uses ` ` ` (backticks)
+On the right side of [this page](http://daringfireball.net/projects/markdown/dingus) you'll find a similar rundown of markdown

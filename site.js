@@ -7,7 +7,6 @@ var express   = require('express')
   , app       = module.exports = express()
   , http      = require('http')
   , poet      = require('poet')(app)
-  //, errors    = require('./errors') 
   , mongoose  = require('mongoose')
   , stylus    = require('stylus')
   //, db        = mongoose.connect('mongodb://localhost/test')
@@ -52,6 +51,7 @@ app.configure('production', function(){
     res.render('404', {url: req.url, title: '404 - page cannot be found'});
   })
   app.set('port', 80);
+  app.set('siteName', 'BrdyOrn');
 });
 
 // controllers - load them
