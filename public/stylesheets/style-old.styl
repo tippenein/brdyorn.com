@@ -1,52 +1,29 @@
-
 /*
 * nib adds browser specific css
 */
 
-/*********** fonts ********/
+/* fonts */
 @import url('http://fonts.googleapis.com/css?family=Droid\+Sans')
 @import url('http://fonts.googleapis.com/css?family=Arimo')
 @font-face
   font-family: 'liberationSans'
   src: url('./lib/liberation_sans/LiberationSans-Regular.ttf')
-HelveticaNeue       = "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif
-DroidSans           = 'Droid Sans', sans-serif
-Tertre              = 'Tertre bold', sans-serif
-header-font         = Tertre
-primary-font-family = HelveticaNeue
+
+header-font         = 'Droid Sans', sans-serif
+primary-font-family = 'Droid Sans', sans-serif
 second-font-family  = 'Arial', sans-serif
 liberationSans      = 'liberationSans', sans-serif
 arimo               = 'Arimo', sans-serif
-/****** colors ********/
-light   = #fefefe
-lighter = #728127
-/*green*/ 
-dark    = #327500 
-/*eggplant*/
-darkest = #10051c
-/*yellow*/
-mid     = #d4b515
-main-bg = light
-content-bg = main-bg 
-link            = #d415a3
-link-hover      = mid
-/*header*/
-header-nav-bg          = light
-header-nav-hover       = darkest
-header-nav-text        = dark
-header-nav-text-hover  = lighter
-header-underline       = darkest
-header-underline-hover = mid
-footer-bg         = darkest
-footer-link       = white
-footer-link-hover = mid 
-tags-bg = darkest
-tag-bg  = dark
-tag-text= light 
-project-bg   = lighter
-project-text = light
-blog-header-link = darkest
-blog-entry-bg = lighter 
+/* colors */
+main-bg         = #fefefe
+primary-light   = #b7cf96
+primary-dark    = #7e9e4f
+secondary-light = #fc1501
+secondary-dark  = #60160a
+link-hover      = #fc1501
+link            = #60160a
+tag-background  = #60160a
+content-background = main-bg 
 
 /* begin normal css */
 html, body
@@ -58,22 +35,14 @@ html, body
 p
   font-family: arimo
   font-size:1em;
-h1,h2,h3,h4,h5,h6
-  font-family: header-font 
-  color: darkest
 
 hr.dashed
   border-width: 0.5px
   border: dashed
 
-
 input
   margin-top:1em
-  margin-right:1em
   padding:0.5em
-
-textarea
-  width:90%
 
 a
   text-decoration: none
@@ -92,12 +61,9 @@ a:hover
 
 #top-title a 
   color:#0f0f0f
-.preview
-  padding-left:1em
-  border-left: 6px solid dark
-  
+
 header 
-  padding-bottom: 5px
+  margin-bottom: 5px
 
 header nav 
   display: block
@@ -107,19 +73,18 @@ header nav
   white-space: nowrap
 
 header nav a 
-  background-color: header-nav-bg
-  color: header-nav-text
-  margin: 6px
+  background-color: primary-dark
+  color:#fafafa
+  margin:6px
   padding: 6px
-  display: inline-block
-  font-size: 25px
-  line-height: 25px
-  border-bottom: 5px solid header-underline
+  border-top-left-radius: 14px
+  border-bottom-right-radius: 14px
+  display:inline-block
+  font-size:25px
+  line-height:25px
 
 header nav a:hover, a.current
-  color: header-nav-text-hover
-  background-color: header-nav-hover
-  border-bottom: 5px solid header-underline-hover
+  background-color: secondary-dark
 
 .navbar
   margin-bottom:0px
@@ -136,13 +101,16 @@ header nav a:hover, a.current
   font:1em italic
 
 .content
-  background-color:content-bg
+  background-color:content-background
 .container
   position:relative
   min-height:100%
 
+textarea
+  width:100%
+
 .content
-  padding-bottom: 0em
+  padding-bottom: 1em
 
 /* ----------SIDEBAR------------*/
 .sidebar 
@@ -161,7 +129,7 @@ header nav a:hover, a.current
   padding-right: 200px
   height: 100px
   position: relative
-  background-color: footer-bg
+  background-color: primary-dark
 
 #footer ul.pull-left li
   list-style-type: none
@@ -173,11 +141,11 @@ header nav a:hover, a.current
   margin-bottom: 5px
 
 #footer a 
-  color: footer-link
+  color:secondary-dark
   padding: 0.5em
 
 #footer a:hover 
-  color: footer-link-hover
+  color: link-hover
 
 .clearfooter
   clear:both;
@@ -202,7 +170,7 @@ pre
 
 .blogentry
   color:#0f0f0f
-  background-color: blog-entry-bg
+  background-color: primary-light
   border-radius:4px
   padding-left:6px
   padding-right:6px
@@ -210,31 +178,30 @@ pre
 .blogcontent
   color:#0f0f0f
   background-color:main-bg
-  padding-bottom:4px
+  border-radius:4px
 
-.blogentry h1 a,h2 a,h3 a,h4 a,h5 a,h6 a
-  color: blog-header-link
 .blogentry p
   line-height:1em
   padding:1em
   margin:1em
 
 .tags
-  border-top: solid 6px light 
-  background-color:tags-bg
+  border-top: solid 6px
+  background-color:tag-background
+  border-radius:4px
   padding-bottom:2px
 
 .tag
-  border-radius: 3px
   display: inline
   padding-bottom: 2px
   padding-left: 2px
   padding-right: 2px
   margin-left: 6px
-  background-color: tag-bg
+  background-color: primary-dark
+  border-radius:4px
 
 .tags h5
-  color:tag-text
+  color:white
 
 .tag a
   color:white
@@ -244,13 +211,10 @@ pre
 /* ---------- other ------------*/
 .project-col1, .project-col2 
   padding: 0.5em
-  background-color: project-bg 
+  background-color: white
 
 .project-text
   padding:1em
   margin-top:1em
-  background-color:project-text
+  background-color:primary-light
 
-#contact
-  padding: 1em
-  background-color: lighter
