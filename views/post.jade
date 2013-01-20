@@ -1,5 +1,8 @@
 extends layout
 
+append metacontent
+  meta(content=#{post.tags})
+
 block content
   .post
     h3

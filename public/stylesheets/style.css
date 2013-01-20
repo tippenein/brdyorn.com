@@ -25,16 +25,16 @@ header nav a:hover,a.current{color:#728127;background-color:#10051c;border-botto
 .content{background-color:#fefefe}
 .container{position:relative;min-height:100%}
 .content{padding-bottom:0}
-footer{color:#fafafa;padding-top:1em;padding-left:20%;padding-right:20%;height:100%;position:relative;background-color:#10051c}
-#footer a{color:#fff;padding:.5em}
+footer{color:#fafafa;padding-top:1em;padding-left:20%;padding-right:-20%;height:100%;position:relative;background-color:#10051c}
 .footer-nav a{font-size:120%}
-#footer a:hover{color:#d4b515}
-#footer ul{margin:0;padding:0}
-#footer li{margin:0;list-style-type:none;margin:0;padding:2px 0 2px 0}
+footer a{color:#fff;padding:.5em}
+footer a:hover{color:#d4b515}
+footer ul{margin:0;padding:0}
+footer li{margin:0;list-style-type:none;margin:0;padding:2px 0 2px 0}
 .footer-nav ul{list-style-type:none;display:list-item}
 .social-icons ul{list-style-type:none}
 .social-icons li{display:inline;padding-top:4px}
-p.license{padding-left:20%;padding-top:4px;margin-bottom:4px;font-size:70%}
+p.license{padding-top:4px;margin-bottom:4px;font-size:70%}
 blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
 pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview{border:1px}
