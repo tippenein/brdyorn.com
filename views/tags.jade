@@ -1,8 +1,9 @@
-extends layout
-
+extends blog
+block title
+  title= Tags - BrdyOrn.com
 block content
   h1 All Tags
-  ul
+  ul.tags
     - each tag in tagList
-      li
+      li.tag
         a(href=tagUrl(tag)) #{tag}

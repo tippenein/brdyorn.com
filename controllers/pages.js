@@ -53,6 +53,7 @@ exports.setup = function(app) {
 
   /*other pages go here*/
   app.post('/save_contact', function(req, res){
+    console.log(req.body)
     name = req.body.name || 'Anonymous';
     email = req.body.email || 'None';
     message = req.body.message;
@@ -77,18 +78,4 @@ exports.setup = function(app) {
     }); 
   });
 
-  app.get('/todo', function(req, res){
-    var todos = [];
-    res.render('todo', 
-      { title: 'task list'
-      , todos: todos 
-      });
-  });
-
-  app.post('save_todo', function(req, res) {
-    var newTodo = {};
-    newTodo = req.body.task;
-    console.log('new todo: ' + newTodo)
-    res.redirect("back");
-  });
 };

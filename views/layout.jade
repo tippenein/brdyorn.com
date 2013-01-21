@@ -11,9 +11,9 @@ block body
       nav.centered
         a(href="/", title='home') Home
         a(href="/projects", title='projects') Projects
-        a(href="/blog", title='blog') Blog
+        //a(href="/blog", title='blog') Blog
         a(href="/contact", title='contact') Contact
-        
+        //a(href="/resume") Resumé
         script
           $(function() {
               return $('header nav a').each(function(index, link) {
@@ -25,7 +25,6 @@ block body
                 } else {$link.removeClass('current')}
               })
             })
-        //a(href="/resume") Resumé
     if status
       if type=='success'
         .status-msg.alert.alert-success=status

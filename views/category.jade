@@ -1,7 +1,10 @@
-extends layout
+extends blog
+
+block title
+  title= {category} category - BrdyOrn.com
 
 block content
-  h1
+  h3
     a(href=categoryUrl(category)) posts in category * #{category}
   - each post in posts
     include includes/postSnippet

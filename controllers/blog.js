@@ -4,10 +4,13 @@ exports.setup = function(app) {
   app.get( '/post/:post', function ( req, res ) {
     var post = req.poet.getPost( req.params.post );
     if ( post ) {
-      console.log(post)
-      res.render( 'post', { post: post }); 
+      var title = post.title + ' - BrdyOrn.com'
+      res.render( 'post', {
+        post: post,
+        title:title,
+        status:''
+      }); 
     } else {
-      console.log(post)
       res.send(404);
     }
   });
@@ -17,7 +20,9 @@ exports.setup = function(app) {
     if ( taggedPosts.length ) {
       res.render( 'tag', {
         posts : taggedPosts,
-        tag : req.params.tag
+        tag   : req.params.tag,
+        title : 'BrdyOrn.com - ' + req.params.tag,
+        status: ''
       });
     }
   });
@@ -26,8 +31,10 @@ exports.setup = function(app) {
     var categorizedPosts = req.poet.postsWithCategory( req.params.category );
     if ( categorizedPosts.length ) {
       res.render( 'category', {
-        posts : categorizedPosts,
-        category : req.params.category
+        posts    : categorizedPosts,
+        category : req.params.category,
+        title    : 'BrdyOrn.com - ' + req.params.category,
+        status   : ''
       });
     }
   });
@@ -37,7 +44,9 @@ exports.setup = function(app) {
       , lastPost = page * 3
     res.render( 'page', {
       posts : req.poet.getPosts( lastPost - 3, lastPost ),
-      page : page
+      page  : page,
+      title : 'Posts - page ' + page + '- BrdyOrn.com',
+      status: ''
     });
   });
 };

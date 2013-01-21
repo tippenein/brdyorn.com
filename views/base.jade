@@ -1,27 +1,25 @@
 doctype 5
 html
   head
-    title=title
-    block metacontent
-      meta(name='keywords', content="brady ouren, brdyorn, web development")
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width; initial-scale=1.0')
-    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    //if lt IE 9
-      script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
-    //
-       html5.js 
-    //if lt IE 9
-      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+    block head
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width; initial-scale=1.0')
+      link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.min.css')
+      link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap-responsive.min.css')
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      //if lt IE 9
+        script(src='http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js')
+      //
+        html5.js 
+      //if lt IE 9
+        script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+      script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+      block metacontent
+        meta(name='keywords', content="brady ouren, brdyorn, web development")
   body
     block body
 
     block jsincludes
-      //script(src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js")
-      //script(src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js")
       script(src='http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js')
       script(type='text/javascript')
         var _gaq = _gaq || [];
