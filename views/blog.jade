@@ -1,13 +1,13 @@
 extends layout
 
 append metacontent
-  meta(content=#{tagList})
+  meta(content=tagList)
 
 block content
   each post in postList
     .blogentry
       h3 
-        a(href=#{post.url}) #{post.title}
+        a(href=post.url) #{post.title}
       h6 posted on #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
       | <br>
       .blogcontent !{post.content}
@@ -15,17 +15,17 @@ block content
         h5 Tags
         each tag in post.tags
           .tag 
-            a(href=#{tagUrl(tag)}) #{tag}
+            a(href=tagUrl(tag)) #{tag}
   block nav
     .blog-nav
       h4 Recent Entries 
       ul.blog-preview
         each post in postList
           li
-            a(href=#{post.url}) #{post.title}
+            a(href=post.url) #{post.title}
       h4.tagbutton Tags
       ul.globaltags
         each tag in tagList
           .globaltag
-            a(href=#{tagUrl(tag)}) #{tag}
+            a(href=tagUrl(tag)) #{tag}
 
