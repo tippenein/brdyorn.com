@@ -1,5 +1,5 @@
 {{{
-    "title" : "Personal Node.js"
+    "title" : "Building a Personal Node.js Website"
   , "tags" : ["node.js", "express", "jade", "stylus"]
   , "date" : "1/19/2013"
   }}}
@@ -49,7 +49,6 @@ because of using `#{post.url}` in an href instead of just `a(href=post.url)`.
 Anyway, it's very consistent, simple and is completely integrated and natural within an express application, so the choice is obvious.  The same goes for [Stylus](http://learnboost.github.com/stylus/) which is a less/sass type css compiled 'language'.  I don't know what people did before css variable names! You can see my use (to a ridiculous extent) [here](https://github.com/tippenein/brdyorn.com/blob/master/public/stylesheets/style.styl)
 
 ##### Express
-I'll keep to talking about how I chose to set up express because there are loads of other tutorials around that 
 The first controller I wrote was for simple static pages that would only require an `app.get(...)` 
 This creates reusable code for later, but considering I have less than 8 static pages, this controller is rather useless in its current capacity. It is however nice to split up blog routes from normal page routes.
 
