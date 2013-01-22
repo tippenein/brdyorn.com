@@ -5,7 +5,9 @@
   "date" : "1/17/2013",
   "syntax" : "js"
 }}}
-Since I didn't have time to roll my own blog controller, I'm trying out Poet today.  I had some [unrelated problems](http://stackoverflow.com/questions/14409242/tracking-down-a-routing-error-with-node-express) with jade views and my negligence in reading the documentation, but overall it was very painless.
+Since I didn't have time to roll my own blog controller, I'm trying out Poet today. 
+I had some [unrelated problems](http://stackoverflow.com/questions/14409242/tracking-down-a-routing-error-with-node-express) 
+with jade views and my negligence in reading the documentation, but overall it was very painless.
 
 Basically all you'll need to do to enable it is a simple `npm install poet -S` to save it in your package.json and in your app.js:
 

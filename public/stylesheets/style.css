@@ -50,3 +50,15 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .project-col1,.project-col2{padding:.5em;background-color:#728127}
 .project-text{padding:1em;margin-top:1em;background-color:#fefefe}
 #contact{padding:1em;background-color:#728127}
+.com{color:#93a1a1}
+.lit{color:#195f91}
+.pun,.opn,.clo{color:#93a1a1}
+.fun{color:#dc322f}
+.str,.atv{color:#d14}
+.kwd,.prettyprint .tag{color:#1e347b}
+.typ,.atn,.dec,.var{color:#008080}
+.pln{color:#48484c}
+.prettyprint{padding:8px;background-color:#10051c;border:1px solid #e1e1e8}
+.prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums inset 41px00#ececf0 -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc inset 41px00#ececf0,.prettyprint.linenums inset 41px00#ececf0 inset 41px00#ececf0{box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0}
+ol.linenums{margin:0 0 0 33px}
+ol.linenums li{padding-left:12px;color:#bebec5;line-height:20px;text-shadow:0 1px 0 #fff}
