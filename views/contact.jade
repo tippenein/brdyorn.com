@@ -1,8 +1,8 @@
 extends layout
 
 block content
+  title #{title} - BrdyOrn.com
   div#contact
-    title=title 
     h1=title
     form(action='/save_contact', method='POST')
       | Send me your message about anything <br> 

@@ -1,49 +1,21 @@
 /* configurations live here */
-var stylus = require('stylus')
 
+exports.site = "localhost";
+exports.port = 8080;
+exports.errorPages = true;
+exports.tests = false; // no tests written yet
+exports.staticDir = './public'
 switch(process.env.NODE_ENV) {
   case 'production':
     exports.site = "brdyorn.com"
+    exports.port = 80;
+    exports.errorPages = false;
     console.log('running on production server')
-    break
-  case 'development':
-    exports.site = "localhost"
-    console.log('running dev')
-    break
+    break;
+  // if needed, staging goes here
   default:
+    exports.site = "localhost"
+    exports.errorPages=true;
     console.log('running dev')
     break;
-};
-
-module.exports = function(app, express){
-  app.configure(function(){
-    app.set('views', __dirname + '/app/views');
-    app.set('view engine', 'jade');
-    app.use(express.favicon(__dirname + '/public/imgs/favicon.ico'));
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
-    app.use(express.cookieParser('AbRsd4gSFffvhy$sfgb5#rs'));
-    app.use(express.session());
-    app.use(app.router);
-    app.use(stylus.middleware({
-      src:__dirname + '/public',
-      compress:true
-    }));
-    app.use(express.static(__dirname + '/public'));
-  });
-  //Dev settings
-  app.configure('development', function(){
-    app.use(express.errorHandler({ dumpExceptions:true, showStack:true }));
-    app.set('port', process.env.PORT || 8080);
-    app.use(express.logger('dev'));
-  });
-  //Production settings
-  app.configure('production', function(){
-    app.use(express.errorHandler());
-    app.use(function(req,res,next){
-      res.status(404);
-      res.render('404', {url: req.url, title: '404 - page cannot be found'});
-    })
-    app.set('port', 80);
-  });
 };
