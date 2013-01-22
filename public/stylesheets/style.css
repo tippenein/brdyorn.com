@@ -38,10 +38,10 @@ p.license{padding-top:4px;margin-bottom:4px;font-size:70%}
 blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
 pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview{border:1px}
-.blogentry{color:#0f0f0f;background-color:#548c2a;border-radius:4px;padding-left:6px;padding-right:6px}
+.blogentry{color:#0f0f0f;background-color:#728127;border-radius:4px;padding-left:6px;padding-right:6px}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
-.blogentry h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#10051c}
-.blogentry p,h1,h2,h3,h4,h5,h6,pre{line-height:1em;padding:1em;margin:1em}
+.blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{line-height:1em;padding:1em;margin:1em}
+.blogentry h1 a,.blogentry h2 a,.blogentry h3 a,.blogentry h4 a,.blogentry h5 a,.blogentry h6 a{color:#10051c}
 .tags{border-top:solid 6px #fefefe;background-color:#10051c;padding-bottom:2px}
 .tag{border-radius:3px;display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#327500}
 .tags h5{color:#fefefe}
