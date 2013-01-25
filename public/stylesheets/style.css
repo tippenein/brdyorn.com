@@ -62,4 +62,7 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums inset 41px00#ececf0 -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc inset 41px00#ececf0,.prettyprint.linenums inset 41px00#ececf0 inset 41px00#ececf0{box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0}
 ol.linenums{margin:0 0 0 33px}
 ol.linenums li{padding-left:12px;color:#bebec5;line-height:20px;text-shadow:0 1px 0 #fff}
-.tagbutton:hover{background-color:#d4b515}
+.underline{border-bottom:solid 4px #10051c}
+.tags-dropdown{font-size:bold 1.25em}
+.tags-dropdown:hover,.recent:hover{background-color:#d4b515}
+.resume{padding-left:4px;border-left:solid 2px #f0f0f0}

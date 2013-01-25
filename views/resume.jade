@@ -2,14 +2,14 @@ extends layout
 
 block content
   title Resumé - Brady Ouren
-  .resume-header
-    h4 If you prefer a more traditional form, you can download the pdf 
+  .resume
+    h4 If you prefer, the full pdf can be downloaded 
       a(href="./pdf/resume.pdf") here
     hr
     h3 Experience
     ul.experience
-      li Node.js / Express website - Built this site in January 2013. Check the source 
-        a(href='http://github.com/tippenein/brdyorn.com') here
+      li Node.js / Express website - Built this site in January 2013. 
+        sub.sub 1
         p 
           em ~ Technologies used: 
             ul
@@ -18,17 +18,17 @@ block content
               li jade & stylus
               li mongo
               li javascript / jQuery
-      li Pair project - Started a webapp project: Potsfyi - a music streaming app intended to run on a personal server. Check the source 
-        a(href='http://github.com/tippenein/potsfyi') here
+      li Pair project - Started a webapp project: Potsfyi - a music streaming app intended to run on a personal server. 
+        sub.sub 2
         p 
           em ~ Technologies used: 
             ul
               li Flask
-              li Backbone & Underscore
+              li Backbone.js & Underscore.js
               li SQLAlchemy
               li Handlebars.js
-              li git
-      li Django Projects - Worked on large Django codebase (SparkWeave summer 2012) along with other smaller Django projects. 
+      li Django Projects - Worked on large Django codebase (SparkWeave summer 2012) creating a 
+        | branding page to make batch manipulations of icon color and other customizations. 
         p 
           em ~ Technologies used: 
             ul
@@ -37,21 +37,27 @@ block content
               li nginx 
               li Gunicorn
               li RabbitMQ
-              li git
       li Buildbot - built and maintained a CI server for pushes coming into SparkWeave's main repo
       li Various Socket Programming assignments 
         ul
           li Used python and javascript to make a udp chat via python cgi and javascript ajax calls through a socket with a python server listening for the udp.
           li Atm-like interface using strictly python sockets and the select module 
-            p see it 
-              a(href='https://bitbucket.org/tippenein/socket-assgn-4211/src') here
+            sub 3
       li Worked in pair programming to develop a FeedReader application for Android. 
         | Worked with key Android libraries and visual elements. Also, I learned what a challenge catching rss with a scraper is.
-        p see it 
-          a(href='http://github.com/tippenein/feedreader') here
+        sub 4
       li Python scripting - check 
         a(href='http://github.com/tippenein') github repo 
         | for bitcoin ticker, send_to_kindle and other small python projects
+    ol
+      li
+        a(href='http://github.com/tippenein/brdyorn.com') brdyorn.com source 
+      li
+        a(href='http://github.com/tippenein/potsfyi') potsfyi source
+      li
+        a(href='https://bitbucket.org/tippenein/socket-assgn-4211/src') socket assignment
+      li
+        a(href='http://github.com/tippenein/feedreader') FeedReader Android App
 
     h6 For other projects see the 
       a(href='./projects') projects page
