@@ -19,14 +19,17 @@ block content
             a(href=tagUrl(tag)) #{tag}
   block nav
     .blog-nav
+      script
+        $(".tagbutton h4").live('click', function() {
+          $("ul.globaltags").removeClass('hidden')
+        })
       h4 Recent Entries 
       ul.blog-preview
         each post in postList
           li
             a(href=post.url) #{post.title}
       h4.tagbutton Tags
-      ul.globaltags
+      ul.globaltags.hidden
         each tag in tagList
           .globaltag
             a(href=tagUrl(tag)) #{tag}
-

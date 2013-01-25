@@ -1,9 +1,9 @@
 @import url("http://fonts.googleapis.com/css?family=Droid\+Sans");
 @import url("http://fonts.googleapis.com/css?family=Arimo");
-@font-face{font-family:'liberationSans';src:url("./lib/liberation_sans/LiberationSans-Regular.ttf")}
-html,body{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;font-size:1em;color:#0f0f0f;background-color:#fefefe}
-p{font-family:'Arimo',sans-serif;font-size:1em}
-h1,h2,h3,h4,h5,h6{font-family:'Tertre bold',sans-serif;color:#10051c}
+html,body{font-family:"Verdana","Arial","Helvetica",sans-serif;font-size:1em;color:#0f0f0f;background-color:#fefefe}
+p{font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2",Georgia,serif;font-size:1em}
+li{padding:2px}
+h1,h2,h3,h4,h5,h6,nav a{font-family:'Tertre bold',sans-serif;color:#10051c}
 hr.dotted{border-top:dashed 3px #10051c;color:#fefefe;background-color:#728127;border:dotted medium #10051c;border-style:none none dotted}
 .clear{clear:both}
 input{margin-top:1em;margin-right:1em;padding:.5em}
@@ -11,7 +11,7 @@ textarea{width:90%}
 a{text-decoration:none;color:#c1390a}
 a:hover{text-decoration:none;color:#d4b515}
 .container{min-height:100%;position:relative}
-#top-title{font-family:'Tertre bold',sans-serif}
+#top-title{font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2",Georgia,serif}
 #top-title a{color:#0f0f0f}
 .preview{padding-left:1em;border-left:6px solid #327500;border-bottom:2px solid #327500}
 header{padding-bottom:5px}
@@ -40,7 +40,7 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview{border:1px}
 .blogentry{color:#0f0f0f;background-color:#728127;border-radius:4px;padding-left:6px;padding-right:6px}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
-.blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{line-height:1em;padding:1em;margin:1em}
+.blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{line-height:1em;padding-left:1em;padding-right:1em;padding-top:.5em;padding-bottom:.5em}
 .blogentry h1 a,.blogentry h2 a,.blogentry h3 a,.blogentry h4 a,.blogentry h5 a,.blogentry h6 a{color:#10051c}
 .tags{border-top:solid 6px #fefefe;background-color:#10051c;padding-bottom:2px}
 .tag{border-radius:3px;display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#327500}
@@ -62,3 +62,4 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums inset 41px00#ececf0 -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc inset 41px00#ececf0,.prettyprint.linenums inset 41px00#ececf0 inset 41px00#ececf0{box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0}
 ol.linenums{margin:0 0 0 33px}
 ol.linenums li{padding-left:12px;color:#bebec5;line-height:20px;text-shadow:0 1px 0 #fff}
+.tagbutton:hover{background-color:#d4b515}

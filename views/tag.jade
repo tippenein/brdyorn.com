@@ -1,10 +1,8 @@
 extends blog
 
-block title
-  title= {tag} tag - BrdyOrn.com
-
 block content
-  h1
-    a(href=tagUrl(tag)) posts tagged * #{tag}
+  title #{tag} tag - BrdyOrn.com
+  h3 Posts tagged 
+    em #{tag}
   - each post in posts
     include includes/postSnippet

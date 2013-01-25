@@ -6,17 +6,17 @@
 /*********** fonts ********/
 @import url('http://fonts.googleapis.com/css?family=Droid\+Sans')
 @import url('http://fonts.googleapis.com/css?family=Arimo')
-@font-face
-  font-family: 'liberationSans'
-  src: url('./lib/liberation_sans/LiberationSans-Regular.ttf')
+
+simple              = "Verdana","Arial","Helvetica",sans-serif
 HelveticaNeue       = "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif
 DroidSans           = 'Droid Sans', sans-serif
 Tertre              = 'Tertre bold', sans-serif
-header-font         = Tertre
-primary-font-family = HelveticaNeue
-second-font-family  = 'Arial', sans-serif
 liberationSans      = 'liberationSans', sans-serif
 arimo               = 'Arimo', sans-serif
+ff-tisa             = "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", Georgia, serif
+header-font         = Tertre 
+title-font          = ff-tisa
+primary-font-family = simple 
 /****** colors ********/
 light   = #fefefe
 lighter = #728127
@@ -27,8 +27,8 @@ darkest = #10051c
 /*yellow*/
 mid     = #d4b515
 main-bg = light
-content-bg = main-bg 
-link            = #c1390a 
+content-bg = main-bg
+link            = #c1390a
 link-hover      = mid
 /*header*/
 header-nav-bg          = light
@@ -56,10 +56,14 @@ html, body
   background-color: main-bg
 
 p
-  font-family: arimo
+  font-family: ff-tisa
   font-size:1em;
-h1,h2,h3,h4,h5,h6
-  font-family: header-font 
+li
+  padding:2px
+
+h1,h2,h3,h4,h5,h6,
+nav a
+  font-family: header-font
   color: darkest
 
 hr.dotted
@@ -93,7 +97,7 @@ a:hover
   position:relative
 
 #top-title
-  font-family: header-font
+  font-family: title-font
 
 #top-title a 
   color:#0f0f0f
@@ -229,8 +233,10 @@ pre
 .blogcontent h6,
 .blogcontent pre
   line-height:1em
-  padding:1em
-  margin:1em
+  padding-left:1em
+  padding-right:1em
+  padding-top:0.5em
+  padding-bottom:0.5em
 
 .blogentry h1 a,
 .blogentry h2 a,
@@ -315,4 +321,5 @@ ol.linenums li
   color: #bebec5
   line-height: 20px
   text-shadow: 0 1px 0 #fff
-
+.tagbutton:hover
+  background-color:mid
