@@ -8,10 +8,11 @@ var express   = require('express')
   , poet      = require('poet')(app)
   , mongoose  = require('mongoose')
   , stylus    = require('stylus')
-  //, db        = mongoose.connect('mongodb://localhost/test')
+  , db        = mongoose.connect('mongodb://localhost/test')
 
 var config = require('./config.js');
 app.configure(function(){
+  app.enable('trust proxy');
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon( config.staticDir + '/imgs/favicon.ico'));
@@ -42,14 +43,26 @@ app.configure(function(){
   }
 });
 
+var models = require('./models/models')
+models.setup(mongoose, db)
+
+var user = new User();
+user.created = new Date();
+user.username = "TEST";
+user.password = "PASS";
+user.email = "someemail";
+user.save();
+
 // controllers - load them
 // Controllers / routes must go after Configure
-controllers = ["pages", "blog"]
+var controllers = ["pages", "blog"]
 for (i in controllers) {
   console.log("loading controller: " + controllers[i])
   controller = require('./controllers/' + controllers[i]);
   controller.setup(app)
 }
+
+
 poet
   .createPostRoute()
   .createPageRoute()

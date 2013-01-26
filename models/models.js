@@ -1,7 +1,19 @@
-var mongoose = require('mongoose').Mongoose
+/* store all models here until there is a reason to split them up */
 
-mongoose.model('Document', function{
-  
-})
+// salt passwords
 
+exports.setup = function(mongoose, db) {
+  var Schema = mongoose.Schema,
+      ObjectId = Schema.ObjectId;
 
+  User = new Schema({
+      created: Date
+    , username: String
+    , password: String
+    , email: String
+  })
+
+  //register models
+  mongoose.model('User', User)
+  User = db.model('User');
+}
