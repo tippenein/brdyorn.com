@@ -8,9 +8,10 @@ var express   = require('express')
   , poet      = require('poet')(app)
   , mongoose  = require('mongoose')
   , stylus    = require('stylus')
-  , db        = mongoose.connect('mongodb://localhost/test')
 
-var config = require('./config.js');
+var config = require('./config.js')
+  , db     = mongoose.connect('mongodb://localhost/' + config.dburi)
+
 app.configure(function(){
   app.enable('trust proxy');
   app.set('views', __dirname + '/views');
@@ -46,12 +47,7 @@ app.configure(function(){
 var models = require('./models/models')
 models.setup(mongoose, db)
 
-var user = new User();
-user.created = new Date();
-user.username = "TEST";
-user.password = "PASS";
-user.email = "someemail";
-user.save();
+User.find().all(function(users) {console.log(users)})
 
 // controllers - load them
 // Controllers / routes must go after Configure
@@ -61,7 +57,6 @@ for (i in controllers) {
   controller = require('./controllers/' + controllers[i]);
   controller.setup(app)
 }
-
 
 poet
   .createPostRoute()

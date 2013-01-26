@@ -7,13 +7,21 @@ exports.setup = function(mongoose, db) {
       ObjectId = Schema.ObjectId;
 
   User = new Schema({
-      created: Date
-    , username: String
-    , password: String
-    , email: String
+    created: Date,
+    username: String,
+    password: String,
+    email: String
   })
-
+  Contact = new Schema({
+    date: Date,
+    name: String,
+    email: String,
+    comment: String
+  })
   //register models
   mongoose.model('User', User)
+  mongoose.model('Contact', Contact)
+
   User = db.model('User');
+  Contact = db.model('Contact');
 }
