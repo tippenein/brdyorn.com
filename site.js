@@ -52,11 +52,9 @@ User.find().all(function(users) {console.log(users)})
 // controllers - load them
 // Controllers / routes must go after Configure
 var controllers = ["pages", "blog"]
-for (i in controllers) {
-  console.log("loading controller: " + controllers[i])
-  controller = require('./controllers/' + controllers[i]);
-  controller.setup(app)
-}
+controllers.forEach(function(controller){
+  require('./controllers/' + controller).setup(app);
+})
 
 poet
   .createPostRoute()

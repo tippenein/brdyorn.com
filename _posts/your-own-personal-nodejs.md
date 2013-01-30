@@ -84,14 +84,14 @@ This creates reusable code for later, but considering I have less than 8 static 
         page.render(req)
       });
     };
-    
+
 The blog controller is similar, however mine is simplified since I'm using poet for blog purposes at the moment. Basically it comes down to a declaration of `module.exports.setup = function({...})` which defines all your routes..
-    
+The javascript `forEach` makes this very concise and doesn't clutter up your app.js file.  
+
     /* in site.js */
     controllers = ["pages", "blog"]
-    for each (controller in controllers) {
-      controller = require('./controllers/' + controller);
-      controller.setup(app)
+    controllers.forEach(function(controller) {
+      require('./controllers/' + controller).setup(app);
     }
-    
-I found out the hard way that Controllers (routes) must go after configure statements otherwise your post data won't be accessible via `req.post.param`.
+
+I found out the hard way that Controllers (routes) must go after configure statements otherwise your post data won't be accessible via `req.post.param`. 
