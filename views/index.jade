@@ -2,20 +2,7 @@ extends layout
 
 block content
   title BrdyOrn.com
-  h3 Welcome to BrdyOrn.com 
-  p
-    | I'm in the process of building 
-    a(href='http://github.com/tippenein/brdyorn.com') this site, 
-    | but feel free to look around.
-    | <br>
-    | <br>
-    | Take a look at my 
-    a(href='/projects') projects
-    | <br>
-    | or contact me  
-    a(href='/contact') here
-
-  h3 Blog Roll
+  h3 Recent Posts
   each post in postList
     .preview
       h3 
