@@ -4,10 +4,12 @@
   , "date" : "1/19/2013"
   }}}
 
-#### Motivation for a personal site running node.js  
-I went into this project out of curiosity knowing very little about javascript much less node. 
-My experience was almost entirely in python web frameworks (see [Flask](http://flask.pocoo.org/) and [Django](https://www.djangoproject.com/)) 
+
+#### Motivation for a personal site running node.js
+I went into this project out of curiosity knowing very little about javascript much less node.
+My experience was almost entirely in python web frameworks (see [Flask](http://flask.pocoo.org/) and [Django](https://www.djangoproject.com/))
 but they're all pretty similar. This will be a chronicle of the adventure that leads to this post.
+
 <!--more-->
 
 #### Depends on the use case
