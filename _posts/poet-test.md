@@ -73,7 +73,7 @@ A simple (for)each loop will get you all the posts.
 
     block nav
       .blog-nav
-        .recent.underline Recent Entries-
+        .recent.underline Recent Entries
         ul.blog-preview
           each post in postList
             li 
