@@ -37,10 +37,10 @@ footer li{margin:0;list-style-type:none;margin:0;padding:2px 0 2px 0}
 p.license{padding-top:4px;margin-bottom:4px;font-size:70%}
 blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
 pre{background-color:#1f1c1f;color:#fafafa}
-.blog-preview{border:1px}
+.blog-preview,.globaltags,.globalcats{list-style:none;padding:0;margin:0;font-size:.75em;border:1px}
 .blogentry{color:#0f0f0f;background-color:#728127;border-radius:4px;padding-left:6px;padding-right:6px}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
-.blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{line-height:1em;padding-left:1em;padding-right:1em;padding-top:.5em;padding-bottom:.5em}
+.blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{padding:8px}
 .blogentry h1 a,.blogentry h2 a,.blogentry h3 a,.blogentry h4 a,.blogentry h5 a,.blogentry h6 a{color:#10051c}
 .tags{border-top:solid 6px #fefefe;background-color:#10051c;padding-bottom:2px}
 .tag{border-radius:3px;display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#327500}
@@ -64,6 +64,6 @@ ol.linenums{margin:0 0 0 33px}
 ol.linenums li{padding-left:12px;color:#bebec5;line-height:20px;text-shadow:0 1px 0 #fff}
 .underline{border-bottom:solid 4px #10051c}
 .tags-dropdown{font-size:bold 1.25em}
-.tags-dropdown:hover,.recent:hover{background-color:#d4b515}
+.categories:hover,.tags-dropdown:hover,.recent:hover{background-color:#d4b515}
 .resume{padding-left:4px;border-left:solid 2px #f0f0f0}
 li.school{font-size:1.25em}

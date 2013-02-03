@@ -1,6 +1,7 @@
 {{{
     "title" : "Building a Personal Node.js Website"
   , "tags" : ["node.js", "express", "jade", "stylus"]
+  , "category" : "node.js"
   , "date" : "1/19/2013"
   }}}
 

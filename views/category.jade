@@ -1,10 +1,10 @@
 extends blog
 
 block title
-  title= {category} category - BrdyOrn.com
 
 block content
-  h3
-    a(href=categoryUrl(category)) posts in category * #{category}
+  title #{category} category - BrdyOrn.com
+  h3 Posts in category 
+    em #{category}
   - each post in posts
     include includes/postSnippet
