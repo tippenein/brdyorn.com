@@ -1,5 +1,6 @@
 extends layout
-
+append head
+  link(rel='stylesheet', href='/stylesheets/fancybox/jquery.fancybox.css')
 block content
   title=title
   .row
@@ -12,10 +13,21 @@ block content
           h4 UMN Classroom Finder
           p
             | Collaborated with a couple people from school to build a scraper for scraping times from the 
-            | official class schedule website. It is meant to run on a server that is easily pingable from your phone 
-            | or computer and notifies of rooms in any building with large gaps between classes.
+            | official class schedule website. 
+            | It notifies of rooms in any building with large gaps between classes.
             | The need was obvious, because the classrooms are packed throughout the day, and it saves you the time of 
             | looking through their entire 40+ buildings separately.
+            | <br>
+            | You could read about the experience in this 
+            a(href='/post/classroom-scraper') post
+
+            | <br>
+            | <br>
+            | Now hosted at 
+            a(href="http://brontasaur.us") brontasaur.us
+          | <br>
+          a(class='project_image', href='/imgs/_posts/scraper-page-2nd.png')
+            img(src='/imgs/_posts/scraper-page-2nd.png', alt='', height=150,width=200)
           | <br>
           a(href="http://www.github.com/tippenein/classroom_finder", target='_blank') Browse it on Github 
         .project-text 
@@ -42,6 +54,9 @@ block content
             a(href='http://backbonejs.org') backbone, underscore, 
             a(href='http://handlebarsjs.com') handlebars 
             | and html5 audio
+          | <br>
+          a(class='project_image', href='/imgs/_posts/potsfyi.png')
+            img(src='/imgs/_posts/potsfyi.png', alt='', height=150,width=200)
           | <br>
           a(href='http://github.com/graue/potsfyi', target='_blank') Fork the original and help out
     .span4  
@@ -77,4 +92,11 @@ block content
             | So I wrote a simple python script to send your ebooks to your kindle via the user@kindle.com email address
           | <br>
           a(href="https://github.com/tippenein/send_to_kindle", target='_blank') Fork away @ github
+
+    append jsincludes
+      script(src='/js/fancybox/jquery.fancybox.pack.js')
+      script
+        $(document).ready(function() {
+          $("a.project_image").fancybox();
+        });
 

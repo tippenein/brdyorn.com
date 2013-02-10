@@ -38,6 +38,7 @@ p.license{padding-top:4px;margin-bottom:4px;font-size:70%}
 blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
 pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview,.globaltags,.globalcats{list-style:none;padding:0;margin:0;font-size:.75em;border:1px}
+.blog-preview li{border-bottom:1px solid #bbb}
 .blogentry{color:#0f0f0f;background-color:#728127;border-radius:4px;padding-left:6px;padding-right:6px}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
 .blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{padding:8px}
