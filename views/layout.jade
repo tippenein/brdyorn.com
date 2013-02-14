@@ -11,7 +11,7 @@ block body
       nav.centered
         a(href="/projects", title='projects') Projects
         a(href="/blog", title='blog') Blog
-        a(href="/contact", title='contact') Contact
+        //a(href="/contact", title='contact') Contact
         a(href="/resume") Resumé
         script
           $(function() {
@@ -47,5 +47,6 @@ block body
             block content
         .span2
           block nav
+            include includes/about
   .clear
   include includes/footer
