@@ -22,16 +22,19 @@ header nav a:hover,a.current{color:#728127;background-color:#10051c;border-botto
 .centered{text-align:center}
 #top-title{padding:.5em;font-size:2.5em}
 #top-subtitle{text:#0b0b0b;font:1em italic}
-.about ul,p{padding-top:8px;padding-left:0;margin-left:0}
-.about a{padding-top:8px;max-width:100px}
+.about ul,p{padding-left:4px;margin-left:4px}
+.about a{padding:4px;max-width:100px}
 .content{background-color:#fefefe}
 .container{position:relative;min-height:100%}
 .content{padding-bottom:0}
-footer{color:#fafafa;padding-top:1em;padding-left:20%;padding-right:-20%;height:100%;position:relative;background-color:#10051c}
+footer{color:#fafafa;padding-top:1em;height:100%;position:absolute;background-color:#10051c}
 .footer-nav a{font-size:120%}
+footer h3,footer h4,footer h5,footer h6{color:#fff}
 footer a{color:#fff;padding:.5em}
 footer a:hover{color:#d4b515}
-footer ul{margin:0;padding:0}
+footer ul{margin:0;padding-top:8px}
+footer a.contact{background-color:#d4b515;padding-bottom:8px}
+footer a.contact:hover{background-color:#fefefe}
 footer li{margin:0;list-style-type:none;margin:0;padding:2px 0 2px 0}
 .footer-nav ul{list-style-type:none;display:list-item}
 .social-icons ul{list-style-type:none}

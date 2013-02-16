@@ -17,6 +17,7 @@ block content
         each tag in post.tags
           .tag 
             a(href=tagUrl(tag)) #{tag}
+
   block nav
     .blog-nav
       .recent.underline Recent Entries 
@@ -34,9 +35,20 @@ block content
         each tag in tagList
           .globaltag
             a(href=tagUrl(tag)) #{tag}
+
   append jsincludes
     script
-      $(".tags-dropdown").toggle(function() {
-        $(".globaltags").removeClass('hidden')}, function() {
+      $(".tags-dropdown").toggle(
+        function() {
+          $(".globaltags").removeClass('hidden');
+        }, 
+        function() {
           $(".globaltags").addClass('hidden')
+        });
+      $(".categories").toggle(
+        function() {
+          $(".globalcats").removeClass('hidden');
+        },
+        function() {
+          $(".globalcats").addClass('hidden');
         });
