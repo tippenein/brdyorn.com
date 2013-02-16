@@ -44,11 +44,15 @@ blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6
 pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview,.globaltags,.globalcats{list-style:none;padding:0;margin:0;font-size:.75em;border:1px}
 .blog-preview li{border-bottom:1px solid #bbb}
-.blogentry{color:#0f0f0f;background-color:#728127;border-radius:4px;padding-left:6px;padding-right:6px}
+.blogentry{color:#0f0f0f;border-radius:4px;padding:6px}
+.blogentry h1 a,.blogentry h2 a,.blogentry h3 a,.blogentry h4 a,.blogentry h5 a,.blogentry h6 a{color:#10051c}
+.blogentry a{font-size:1.25em;color:#10051c}
+.blogentry a:hover{color:#d4b515}
+.blogentry.even{background-color:#f6f6f6}
+.blogentry:hover{background-color:#fefefe}
+.blogentry,.tags{border-top:solid 6px #fefefe;padding-bottom:2px}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
 .blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{padding:8px}
-.blogentry h1 a,.blogentry h2 a,.blogentry h3 a,.blogentry h4 a,.blogentry h5 a,.blogentry h6 a{color:#10051c}
-.tags{border-top:solid 6px #fefefe;background-color:#10051c;padding-bottom:2px}
 .tag{border-radius:3px;display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#327500}
 .tags h5{color:#fefefe}
 .tag a{color:#fff}
