@@ -35,6 +35,7 @@ footer a:hover{color:#d4b515}
 footer ul{margin:0;padding-top:8px}
 footer a.contact{background-color:#d4b515;padding-bottom:8px}
 footer a.contact:hover{background-color:#fefefe}
+footer .span3{border-right:2px solid #555;height:300px}
 footer li{margin:0;list-style-type:none;margin:0;padding:2px 0 2px 0}
 .footer-nav ul{list-style-type:none;display:list-item}
 .social-icons ul{list-style-type:none}
@@ -46,10 +47,9 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview li{border-bottom:1px solid #bbb}
 .blogentry{color:#0f0f0f;border-radius:4px;padding:6px}
 .blogentry h1 a,.blogentry h2 a,.blogentry h3 a,.blogentry h4 a,.blogentry h5 a,.blogentry h6 a{color:#10051c}
-.blogentry a{font-size:1.25em;color:#10051c}
-.blogentry a:hover{color:#d4b515}
+.blogentry a{font-weight:900;letter-spacing:2px;color:#10051c}
+.blogentry a:hover{color:#c1390a}
 .blogentry.even{background-color:#f6f6f6}
-.blogentry:hover{background-color:#fefefe}
 .blogentry,.tags{border-top:solid 6px #fefefe;padding-bottom:2px}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
 .blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{padding:8px}

@@ -5,17 +5,13 @@ append metacontent
 
 block content
   title Blog - BrdyOrn.com
-  - var i = 1;
-  - each post in postList
-    if (i % 2 == 0) 
-      .blogentry.even
-        a(href=post.url) #{post.title}
-        span.pull-right #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
-    else
-      .blogentry.odd
-        a(href=post.url) #{post.title}
-        span.pull-right #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
-    - i++
+  for post in postList
+    .blogentry
+      a(href=post.url) #{post.title}
+      span.pull-right .
+        #{post.date.toString().split(' ')[1]}
+        #{post.date.getDate()},
+        #{post.date.getFullYear()}
 block nav
   .blog-nav
     .recent.underline Recent Entries 
@@ -45,8 +41,8 @@ append jsincludes
       });
     $(".categories").toggle(
       function() {
-        $(".globalcats").removeClass('hidden');
+        $(".globalcats").addClass('hidden');
       },
       function() {
-        $(".globalcats").addClass('hidden');
+        $(".globalcats").removeClass('hidden');
       });
