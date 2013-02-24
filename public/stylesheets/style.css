@@ -17,7 +17,7 @@ a:hover{text-decoration:none;color:#d4b515}
 header{padding-bottom:5px}
 header nav{display:block;clear:both;margin-top:6px;padding-top:6px;white-space:nowrap}
 header nav a{background-color:#fefefe;color:#327500;margin:6px;padding:6px;display:inline-block;font-size:25px;line-height:25px;border-bottom:5px solid #10051c}
-header nav a:hover,a.current{color:#728127;background-color:#10051c;border-bottom:5px solid #d4b515}
+header nav a:hover,a.current{color:#fefefe;background-color:#10051c;border-bottom:5px solid #d4b515}
 .navbar{margin-bottom:0}
 .centered{text-align:center}
 #top-title{padding:.5em;font-size:2.5em}
@@ -29,13 +29,13 @@ header nav a:hover,a.current{color:#728127;background-color:#10051c;border-botto
 .content{padding-bottom:0}
 footer{color:#fafafa;padding-top:1em;height:100%;position:absolute;background-color:#10051c}
 .footer-nav a{font-size:120%}
-footer h3,footer h4,footer h5,footer h6{color:#fff}
-footer a{color:#fff;padding:.5em}
+footer h3,footer h4,footer h5,footer h6{color:#fefefe}
+footer a{color:#c1390a;padding:.5em}
 footer a:hover{color:#d4b515}
 footer ul{margin:0;padding-top:8px}
 footer a.contact{background-color:#d4b515;padding-bottom:8px}
 footer a.contact:hover{background-color:#fefefe}
-footer .span3{border-right:2px solid #555;height:300px}
+footer .span4{padding-left:16px;border-left:2px solid #555;height:300px}
 footer li{margin:0;list-style-type:none;margin:0;padding:2px 0 2px 0}
 .footer-nav ul{list-style-type:none;display:list-item}
 .social-icons ul{list-style-type:none}
@@ -70,6 +70,7 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .pln{color:#d4d4ac}
 .prettyprint{padding:8px;background-color:#10051c;border:1px solid #e1e1e8}
 .prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums inset 41px00#ececf0 -moz-box-shadow: inset 40px00#fbfbfc,.prettyprint.linenums -webkit-box-shadow: inset 40px00#fbfbfc inset 41px00#ececf0,.prettyprint.linenums inset 41px00#ececf0 inset 41px00#ececf0{box-shadow:inset 40px 0 0 #fbfbfc,inset 41px 0 0 #ececf0}
+.about-paragraph{font-size:78%}
 ol.linenums{margin:0 0 0 33px}
 ol.linenums li{padding-left:12px;color:#bebec5;line-height:20px;text-shadow:0 1px 0 #fff}
 .underline{border-bottom:solid 4px #10051c}
