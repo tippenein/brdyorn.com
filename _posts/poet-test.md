@@ -12,7 +12,9 @@ I had some [unrelated problems](http://stackoverflow.com/questions/14409242/trac
 with jade views and my negligence in reading the documentation, but overall it was very painless.
 
 Basically all you'll need to do to enable it is a simple `npm install poet -S` to save it in your package.json and in your app.js:
+
 <!--more-->
+
 
     poet = require('poet')(app)
 

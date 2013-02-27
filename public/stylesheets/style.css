@@ -2,7 +2,7 @@
 @import url("http://fonts.googleapis.com/css?family=Arimo");
 html,body{font-family:"Verdana","Arial","Helvetica",sans-serif;font-size:1em;color:#0f0f0f;background-color:#fefefe}
 p{font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2",Georgia,serif;font-size:1em}
-li{padding:2px}
+li{padding-top:6px;line-height:1em}
 h1,h2,h3,h4,h5,h6,nav a{font-family:'Tertre bold',sans-serif;color:#10051c}
 hr.dotted{border-top:dashed 3px #10051c;color:#fefefe;background-color:#728127;border:dotted medium #10051c;border-style:none none dotted}
 .clear{clear:both}
@@ -44,13 +44,14 @@ p.license{padding-top:4px;margin-bottom:4px;font-size:70%}
 blockquote{background:#fff;border-left-style:3px;font-style:italic;border-left:6px solid #111}
 pre{background-color:#1f1c1f;color:#fafafa}
 .blog-preview,.globaltags,.globalcats{list-style:none;padding:0;margin:0;font-size:.75em;border:1px}
-.blog-preview li{border-bottom:1px solid #bbb}
+.blog-preview li{border-bottom:1px solid #bbb;line-height:20px}
 .blogentry{color:#0f0f0f;border-radius:4px;padding:6px}
 .blogentry h1 a,.blogentry h2 a,.blogentry h3 a,.blogentry h4 a,.blogentry h5 a,.blogentry h6 a{color:#10051c}
 .blogentry a{font-weight:900;letter-spacing:2px;color:#10051c}
 .blogentry a:hover{color:#c1390a}
 .blogentry.even{background-color:#f6f6f6}
 .blogentry,.tags{border-top:solid 6px #fefefe;padding-bottom:2px}
+.tags{background-color:#10051c}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
 .blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{padding:8px}
 .tag{border-radius:3px;display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#327500}
