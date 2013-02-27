@@ -34,11 +34,11 @@ link-hover      = mid
 header-nav-bg          = light
 header-nav-hover       = darkest
 header-nav-text        = dark
-header-nav-text-hover  = lighter
+header-nav-text-hover  = light
 header-underline       = darkest
 header-underline-hover = mid
 footer-bg         = darkest
-footer-link       = white
+footer-link       = link
 footer-link-hover = mid 
 tags-bg = darkest
 tag-bg  = dark
@@ -57,9 +57,10 @@ html, body
 
 p
   font-family: ff-tisa
-  font-size:1em;
+  font-size:1em
 li
-  padding:2px
+  padding-top: 6px
+  line-height: 1em
 
 h1,h2,h3,h4,h5,h6,
 nav a
@@ -105,7 +106,7 @@ a:hover
   padding-left:1em
   border-left: 6px solid dark
   border-bottom: 2px solid dark
-  
+
 header 
   padding-bottom: 5px
 
@@ -177,7 +178,7 @@ footer h3
 footer h4
 footer h5
 footer h6
-  color: footer-link
+  color: light
 footer a
   color: footer-link
   padding: 0.5em
@@ -196,8 +197,9 @@ footer a.contact
 footer a.contact:hover
   background-color: light
 
-footer .span3
-  border-right: 2px solid #555
+footer .span4
+  padding-left:16px
+  border-left: 2px solid #555
   height: 300px
 
 footer li
@@ -244,6 +246,7 @@ pre
 
 .blog-preview li
   border-bottom: 1px solid #bbb
+  line-height:20px
 
 .blogentry
   color:#0f0f0f
@@ -274,6 +277,8 @@ pre
 .tags
   border-top: solid 6px light 
   padding-bottom:2px
+.tags
+  background-color: darkest
 
 .blogcontent
   color:#0f0f0f
@@ -348,7 +353,8 @@ pre
      -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0
           box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0
 
-
+.about-paragraph
+  font-size:78%
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums
   /* IE indents via margin-left */
