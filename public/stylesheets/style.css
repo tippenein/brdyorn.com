@@ -55,6 +55,7 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .blogcontent{color:#0f0f0f;background-color:#fefefe;padding-bottom:4px}
 .blogcontent p,.blogcontent h2,.blogcontent h4,.blogcontent h5,.blogcontent h6,.blogcontent pre{padding:8px}
 .tag{border-radius:3px;display:inline;padding-bottom:2px;padding-left:2px;padding-right:2px;margin-left:6px;background-color:#327500}
+.tags{background-color:#10051c}
 .tags h5{color:#fefefe}
 .tag a{color:#fff}
 .tag a:hover{color:#d4b515}
