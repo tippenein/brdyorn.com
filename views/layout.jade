@@ -24,15 +24,10 @@ block body
               })
             })
           $(document).ready(function() {
-            var prettify = false;
             $("pre code").parent().each(function() {
-              $(this).addClass('prettyprint');
-              prettify = true;
+              $(this).addClass('highlight');
+              $('head').append("<link rel='stylesheet' href='/stylesheets/highlight.css' type='text/css'>");
             });
-
-            if ( prettify ) {
-              $.getScript("/js/prettify.js", function() { prettyPrint() });
-            }
           });
     if status
       if type=='success'
