@@ -34,11 +34,11 @@ link-hover      = mid
 header-nav-bg          = light
 header-nav-hover       = darkest
 header-nav-text        = dark
-header-nav-text-hover  = lighter
+header-nav-text-hover  = light
 header-underline       = darkest
 header-underline-hover = mid
 footer-bg         = darkest
-footer-link       = white
+footer-link       = link
 footer-link-hover = mid 
 tags-bg = darkest
 tag-bg  = dark
@@ -57,9 +57,10 @@ html, body
 
 p
   font-family: ff-tisa
-  font-size:1em;
+  font-size:1em
 li
-  padding:2px
+  padding-top: 6px
+  line-height: 1em
 
 h1,h2,h3,h4,h5,h6,
 nav a
@@ -105,7 +106,7 @@ a:hover
   padding-left:1em
   border-left: 6px solid dark
   border-bottom: 2px solid dark
-  
+
 header 
   padding-bottom: 5px
 
@@ -145,6 +146,14 @@ header nav a:hover, a.current
   text:#0b0b0b
   font:1em italic
 
+.about ul,p
+  padding-left: 4px
+  margin-left: 4px
+
+.about a
+  padding: 4px
+  max-width: 100px
+
 .content
   background-color:content-bg
 .container
@@ -158,15 +167,18 @@ header nav a:hover, a.current
 footer 
   color:#fafafa
   padding-top: 1em
-  padding-left: 20% 
-  padding-right: -20%
   height: 100%
-  position: relative
+  position: absolute
   background-color: footer-bg
 
 .footer-nav a
   font-size: 120%
 
+footer h3
+footer h4
+footer h5
+footer h6
+  color: light
 footer a
   color: footer-link
   padding: 0.5em
@@ -176,7 +188,19 @@ footer a:hover
 
 footer ul
   margin:0
-  padding:0
+  padding-top:8px
+
+footer a.contact
+  background-color: mid
+  padding-bottom: 8px
+
+footer a.contact:hover
+  background-color: light
+
+footer .span4
+  padding-left:16px
+  border-left: 2px solid #555
+  height: 300px
 
 footer li
   margin:0
@@ -212,14 +236,49 @@ pre
   color:#fafafa
 
 .blog-preview
+.globaltags
+.globalcats
+  list-style:none
+  padding:0
+  margin:0
+  font-size:0.75em
   border:1px
+
+.blog-preview li
+  border-bottom: 1px solid #bbb
+  line-height:20px
 
 .blogentry
   color:#0f0f0f
-  background-color: blog-entry-bg
   border-radius:4px
-  padding-left:6px
-  padding-right:6px
+  padding:6px
+
+
+.blogentry h1 a,
+.blogentry h2 a,
+.blogentry h3 a,
+.blogentry h4 a,
+.blogentry h5 a,
+.blogentry h6 a
+  color: blog-header-link
+
+.blogentry a
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: darkest
+
+.blogentry a:hover
+  color: link
+
+.blogentry.even
+  background-color: #f6f6f6 
+
+.blogentry 
+.tags
+  border-top: solid 6px light 
+  padding-bottom:2px
+.tags
+  background-color: darkest
 
 .blogcontent
   color:#0f0f0f
@@ -232,24 +291,7 @@ pre
 .blogcontent h5,
 .blogcontent h6,
 .blogcontent pre
-  line-height:1em
-  padding-left:1em
-  padding-right:1em
-  padding-top:0.5em
-  padding-bottom:0.5em
-
-.blogentry h1 a,
-.blogentry h2 a,
-.blogentry h3 a,
-.blogentry h4 a,
-.blogentry h5 a,
-.blogentry h6 a
-  color: blog-header-link
-
-.tags
-  border-top: solid 6px light 
-  background-color:tags-bg
-  padding-bottom:2px
+  padding:8px
 
 .tag
   border-radius: 3px
@@ -259,7 +301,8 @@ pre
   padding-right: 2px
   margin-left: 6px
   background-color: tag-bg
-
+.tags
+  background-color:darkest
 .tags h5
   color:tag-text
 
@@ -305,12 +348,13 @@ pre
   background-color: darkest
   border: 1px solid #e1e1e8
 
-.prettyprint.linenums 
+.prettyprint.linenums
   -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0
      -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0
           box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0
 
-
+.about-paragraph
+  font-size:78%
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums
   /* IE indents via margin-left */
@@ -327,6 +371,7 @@ ol.linenums li
 .tags-dropdown
   font-size: bold 1.25em 
 
+.categories:hover
 .tags-dropdown:hover,
 .recent:hover
   background-color:mid
@@ -335,3 +380,5 @@ ol.linenums li
   padding-left:4px
   border-left: solid 2px #f0f0f0
 
+li.school
+  font-size: 1.25em

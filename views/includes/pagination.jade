@@ -3,7 +3,7 @@ ul.pagination
   - var pageCount = getPageCount();
   - while ( i <= pageCount )
     if page == i
-      li(class='active')
+      li(class='current')
         a(href=pageUrl(i)) #{i}
     else
       li

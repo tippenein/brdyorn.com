@@ -2,24 +2,15 @@ extends layout
 
 block content
   title BrdyOrn.com
-  h3 Welcome to BrdyOrn.com 
-  p
-    | I'm in the process of building 
-    a(href='http://github.com/tippenein/brdyorn.com') this site, 
-    | but feel free to look around.
-    | <br>
-    | <br>
-    | Take a look at my 
-    a(href='/projects') projects
-    | <br>
-    | or contact me  
-    a(href='/contact') here
-
-  h3 Blog Roll
+  h3 Recent Posts
   each post in postList
     .preview
       h3 
         a(href=post.url) #{post.title} 
-      h6 posted on #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
+      h6 .
+        posted on 
+          #{post.date.toString().split(' ')[1]}
+          #{post.date.getDate()},
+          #{post.date.getFullYear()}
       p !{post.preview}
 

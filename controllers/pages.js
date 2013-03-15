@@ -36,9 +36,8 @@ function route(app, page) {
 };
 
 /* Static pages*/
-page('', 'BrdyOrn.com')
+page('', 'Brady Ouren')
 page('contact', 'Contact')
-page('about', 'About Brady Ouren')
 page('projects', 'Projects - past and present')
 page('photo_upload', 'Upload your Photo Publicly')
 page('photo_show', 'Uploaded Photo')

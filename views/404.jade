@@ -2,8 +2,12 @@ extends base
 
 block body
   title 404 - Page Not Found
-  | <body style="background-color:#; text-align: center;">
+  | <body style="text-align: center;">
   | <div class='container.error404' >
   h3 404 - Seems as though you've tried to reach a page that doesn't exist
+
   h4 #{process.env.siteName} #{url} is not a valid url
-  img( src='imgs/404_sloth.jpg', style='centered')
+
+  a(href='/') Home pl0x
+  | <br>
+  img( src='/imgs/404_sloth.jpg', style='centered')

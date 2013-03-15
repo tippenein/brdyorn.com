@@ -5,33 +5,44 @@ append metacontent
 
 block content
   title Blog - BrdyOrn.com
-  each post in postList
+  for post in postList
     .blogentry
-      h3 
-        a(href=post.url) #{post.title}
-      h6 posted on #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
-      | <br>
-      .blogcontent !{post.content}
-      .tags
-        h5 Tags
-        each tag in post.tags
-          .tag 
-            a(href=tagUrl(tag)) #{tag}
-  block nav
-    .blog-nav
-      .recent.underline Recent Entries 
-      ul.blog-preview
-        each post in postList
-          li
-            a(href=post.url) #{post.title}
-      .tags-dropdown.underline Tags
-      ul.globaltags.hidden
-        each tag in tagList
-          .globaltag
-            a(href=tagUrl(tag)) #{tag}
-  append jsincludes
-    script
-      $(".tags-dropdown").toggle(function() {
-        $(".globaltags").removeClass('hidden')}, function() {
-          $(".globaltags").addClass('hidden')
-        });
+      a(href=post.url) #{post.title}
+      span.pull-right .
+        #{post.date.toString().split(' ')[1]}
+        #{post.date.getDate()},
+        #{post.date.getFullYear()}
+block nav
+  .blog-nav
+    .recent.underline Recent Entries 
+    ul.blog-preview
+      each post in postList
+        li
+          a(href=post.url) #{post.title}
+    .categories.underline Categories
+    ul.globalcats
+      each category in categoryList
+        .globalcat
+          a(href=categoryUrl(category)) #{category}
+    .tags-dropdown.underline Tags
+    ul.globaltags.hidden
+      each tag in tagList
+        .globaltag
+          a(href=tagUrl(tag)) #{tag}
+
+append jsincludes
+  script
+    $(".tags-dropdown").toggle(
+      function() {
+        $(".globaltags").removeClass('hidden');
+      }, 
+      function() {
+        $(".globaltags").addClass('hidden')
+      });
+    $(".categories").toggle(
+      function() {
+        $(".globalcats").addClass('hidden');
+      },
+      function() {
+        $(".globalcats").removeClass('hidden');
+      });

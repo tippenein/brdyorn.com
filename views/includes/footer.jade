@@ -1,35 +1,37 @@
 footer.container
-  .span4.footer-nav
-    ul
-      li
-        a(href='/') Home
-      li
-        a(href='/blog') Blog
-      li
-        a(href='/projects') Projects
-      li
-        a(href='/contact') Contact
-      li 
-        a(href='/resume') Resumé
+  //include twitter
+  .row
+    .span4.footer-nav.offset2
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/blog') Blog
+        li
+          a(href='/projects') Projects
+        li
+          a(href='/contact') Contact
+        li 
+          a(href='/resume') Resumé
+      .clear
+      h5 Follow me
+      ul.social-icons
+        li
+          a(href='http://www.github.com/tippenein', target='_blank')
+            img(src='/imgs/social/32/github_round.png')
+        li
+          a(href='http://www.twitter.com/tippenein', target='_blank')
+            img(src='/imgs/social/32/twitter_round.png')
+        li
+          a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank')
+            img(src='/imgs/social/32/linkedin_round.png')
+        li
+          a(href='http://www.last.fm/user/planetplosion', target='_blank')
+            img(src='/imgs/social/32/lastfm_round.png')
+    .span4.about
+      include about
     .clear
-    | <br>
-  .span4.social-icons
-    ul
-      li
-        a(href='http://www.github.com/tippenein', target='_blank')
-          img(src='/imgs/social/32/github_round.png')
-      li
-        a(href='http://www.twitter.com/tippenein', target='_blank')
-          img(src='/imgs/social/32/twitter_round.png')
-      li
-        a(href='http://www.linkedin.com/profile/view?id=138420230', target='_blank')
-          img(src='/imgs/social/32/linkedin_round.png')
-      li
-        a(href='http://www.last.fm/user/planetplosion', target='_blank')
-          img(src='/imgs/social/32/lastfm_round.png')
-      | <br><br>
-  .clear
-  .span8.row.license.centered
+  .span8.offset2.row.license.centered
     p.license This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. 
       a( rel="license", href="http://creativecommons.org/licenses/by-sa/3.0/") 
         img( alt="Creative Commons License", style="border-width:0", src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png")
