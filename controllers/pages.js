@@ -44,7 +44,7 @@ page('photo_show', 'Uploaded Photo')
 page('blog', 'Blog - BrdyOrn.com')
 page('resume', 'Resumé - Brady Ouren')
 
-exports.setup = function(app) {
+exports.setup = function(app, mongoose) {
   /*setup static pages*/
   for (i in pages) {
     console.log(pages[i].locals)
@@ -53,12 +53,21 @@ exports.setup = function(app) {
 
   /*other pages go here*/
   app.post('/save_contact', function(req, res){
+    var Contact = mongoose.model('Contact', Contact)
     console.log(req.body)
-    name = req.body.name || 'Anonymous';
-    email = req.body.email || 'None';
-    message = req.body.message;
-    console.log(name + " - " + email + " said: \n" + message);
+    _name = req.body.name || 'Anonymous';
+    _email = req.body.email || 'None';
+    _message = req.body.message;
+    var contact = new Contact({ name: _name,
+                                email: _email,
+                                msg: _message })
     // send message to db 
+    contact.save( function(error, data){
+      if(error){
+        console.log("error inserting contact info")
+      }
+    })
+    console.log(_name + " - " + _email + " said: \n" + _message);
     res.render('index', {title: '', type: 'success', status: 'Thanks for the comments'})
   });
 

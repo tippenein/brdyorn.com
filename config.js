@@ -5,6 +5,7 @@ exports.port = 8080;
 exports.errorPages = true;
 exports.tests = false; // no tests written yet
 exports.staticDir = './public'
+exports.dburi = 'test'
 switch(process.env.NODE_ENV) {
   case 'production':
     exports.dburi = 'production'

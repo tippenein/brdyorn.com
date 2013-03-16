@@ -1,16 +1,14 @@
 /* store all models here until there is a reason to split them up */
 
-// salt passwords
-
 exports.setup = function(mongoose, db) {
   var Schema = mongoose.Schema,
       ObjectId = Schema.ObjectId;
 
-  User = new Schema({
+  Comment = new Schema({
     created: Date,
     username: String,
-    password: String,
-    email: String
+    email: String,
+    comment: String
   })
   Contact = new Schema({
     date: Date,
@@ -19,9 +17,7 @@ exports.setup = function(mongoose, db) {
     comment: String
   })
   //register models
-  mongoose.model('User', User)
+  mongoose.model('Comment', Comment)
   mongoose.model('Contact', Contact)
 
-  User = db.model('User');
-  Contact = db.model('Contact');
 }

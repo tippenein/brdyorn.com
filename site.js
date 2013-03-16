@@ -8,9 +8,9 @@ var express   = require('express')
   , poet      = require('poet')(app)
   , mongoose  = require('mongoose')
   , stylus    = require('stylus')
+  , config    = require('./config.js')
 
-var config = require('./config.js')
-  , db     = mongoose.connect('mongodb://localhost/' + config.dburi)
+mongoose.connect('mongodb://localhost/' + config.dburi)
 
 app.configure(function(){
   app.enable('trust proxy');
@@ -39,21 +39,19 @@ app.configure(function(){
     app.use(express.errorHandler());
     app.use(function(req,res,next){
       res.status(404);
-      res.render('404', {url: req.url, title: '404 - page cannot be found'});
+      res.render('404', { url: req.url, title: '404 - page cannot be found' });
     })
   }
 });
 
 var models = require('./models/models')
-models.setup(mongoose, db)
-
-User.find().all(function(users) {console.log(users)})
+models.setup(mongoose)
 
 // controllers - load them
 // Controllers / routes must go after Configure
 var controllers = ["pages", "blog"]
 controllers.forEach(function(controller){
-  require('./controllers/' + controller).setup(app);
+  require('./controllers/' + controller).setup(app, mongoose);
 })
 
 poet
