@@ -8,10 +8,12 @@ var express   = require('express')
   , poet      = require('poet')(app)
   , mongoose  = require('mongoose')
   , stylus    = require('stylus')
-  //, db        = mongoose.connect('mongodb://localhost/test')
+  , config    = require('./config.js')
 
-var config = require('./config.js');
+mongoose.connect('mongodb://localhost/' + config.dburi)
+
 app.configure(function(){
+  app.enable('trust proxy');
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon( config.staticDir + '/imgs/favicon.ico'));
@@ -37,19 +39,21 @@ app.configure(function(){
     app.use(express.errorHandler());
     app.use(function(req,res,next){
       res.status(404);
-      res.render('404', {url: req.url, title: '404 - page cannot be found'});
+      res.render('404', { url: req.url, title: '404 - page cannot be found' });
     })
   }
 });
 
+var models = require('./models/models')
+models.setup(mongoose)
+
 // controllers - load them
 // Controllers / routes must go after Configure
-controllers = ["pages", "blog"]
-for (i in controllers) {
-  console.log("loading controller: " + controllers[i])
-  controller = require('./controllers/' + controllers[i]);
-  controller.setup(app)
-}
+var controllers = ["pages", "blog"]
+controllers.forEach(function(controller){
+  require('./controllers/' + controller).setup(app, mongoose);
+})
+
 poet
   .createPostRoute()
   .createPageRoute()
