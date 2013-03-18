@@ -19,8 +19,6 @@ app.configure(function(){
   app.use(express.favicon( config.staticDir + '/imgs/favicon.ico'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.cookieParser('AbRsd4gSFffvhy$sfgb5#rs'));
-  app.use(express.session());
   app.use(poet.middleware());
   app.use(app.router);
   app.use(stylus.middleware({

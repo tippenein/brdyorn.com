@@ -58,13 +58,14 @@ exports.setup = function(app, mongoose) {
     _name = req.body.name || 'Anonymous';
     _email = req.body.email || 'None';
     _message = req.body.message;
-    var contact = new Contact({ name: _name,
+    var contact = new Contact({ date: Date.now(),
+                                name: _name,
                                 email: _email,
                                 msg: _message })
     // send message to db 
     contact.save( function(error, data){
       if(error){
-        console.log("error inserting contact info")
+        console.log("error inserting contact info - " + error)
       }
     })
     console.log(_name + " - " + _email + " said: \n" + _message);
