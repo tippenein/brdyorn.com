@@ -1,8 +1,9 @@
 html,body{font-family:"Verdana","Arial","Helvetica",sans-serif;font-size:1em;color:#0f0f0f;background-color:#fefefe}
 p{font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2",Georgia,serif;font-size:1em}
 li{padding-top:6px;line-height:1em}
+button{margin:2px}
 h1,h2,h3,h4,h5,h6,nav a{font-family:'Tertre bold',sans-serif;color:#10051c}
-hr.dotted{border-top:dashed 3px #10051c;color:#fefefe;background-color:#728127;border:dotted medium #10051c;border-style:none none dotted}
+hr.dotted{border-top:dashed 3px #10051c;color:#fefefe;border:dotted medium #10051c;border-style:none none dotted}
 .clear{clear:both}
 input{margin-top:1em;margin-right:1em;padding:.5em}
 textarea{width:90%}
@@ -17,6 +18,7 @@ header nav{display:block;clear:both;margin-top:6px;padding-top:6px;white-space:n
 header nav a{background-color:#fefefe;color:#327500;margin:6px;padding:6px;display:inline-block;font-size:25px;line-height:25px;border-bottom:5px solid #10051c}
 header nav a:hover,a.current{color:#fefefe;background-color:#10051c;border-bottom:5px solid #d4b515}
 .navbar{margin-bottom:0}
+img{margin:4px}
 .centered{text-align:center}
 #top-title{padding:.5em;font-size:2.5em}
 #top-subtitle{text:#0b0b0b;font:1em italic}
@@ -57,8 +59,7 @@ pre{background-color:#1f1c1f;color:#fafafa}
 .tags h5{color:#fefefe}
 .tag a{color:#fff}
 .tag a:hover{color:#d4b515}
-.project-col1,.project-col2{padding:.5em;background-color:#728127}
-.project-text{padding:1em;margin-top:1em;background-color:#fefefe}
+.project-text{padding:1em;margin-top:1em;border-left:4px solid #728127;border-bottom:4px solid #728127;background-color:#fefefe}
 #contact{padding:1em;background-color:#728127}
 .com{color:#827d06}
 .lit{color:#195f91}
