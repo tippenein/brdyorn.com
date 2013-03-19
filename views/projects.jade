@@ -4,16 +4,34 @@ append head
 block content
   title=title
   .row
-    .span4
-      .project-col1
-        h2 Projects I'm working on.
+    .span8
+      .project
+        p filter:
+          button(id="full") Full
+          button(id="present") Current
+          button(id="past") Past
+        script
+          $('#full').click( function() {
+            $('.project-text').show() 
+          })
+          $('#present').click( function() {
+            $('.project-text').show() 
+            $('.past').hide()
+          })
+          $('#past').click( function() {
+            $('.project-text').show() 
+            $('.present').hide()
+          })
+
         hr.dotted
-        .project-text
+        .project-text.present
           //classroom_finder
           h4 UMN Classroom Finder
+          a(class='project_image', href='/imgs/_posts/scraper-preview.png').pull-right
+            img(src='/imgs/_posts/scraper-page-2nd.png', alt='', height=150,width=200)
           p
             | Collaborated with a couple people from school to build a scraper for scraping times from the 
-            | official class schedule website. 
+            | official class schedule website.
             | It notifies of rooms in any building with large gaps between classes.
             | The need was obvious, because the classrooms are packed throughout the day, and it saves you the time of 
             | looking through their entire 40+ buildings separately.
@@ -25,25 +43,25 @@ block content
             | <br>
             | Now hosted at 
             a(href="http://brontasaur.us") brontasaur.us
-          | <br>
-          a(class='project_image', href='/imgs/_posts/scraper-preview.png')
-            img(src='/imgs/_posts/scraper-page-2nd.png', alt='', height=150,width=200)
-          | <br>
-          a(href="http://www.github.com/tippenein/classroom_finder", target='_blank') Browse it on Github 
-        .project-text 
+            | <br>
+            a(href="http://www.github.com/tippenein/classroom_finder", target='_blank').pull-right Browse it on Github 
+        .project-text.present
           //this site
           h4 brdyorn.com
           p
             | This particular site is an ongoing project for me.
-            | I adapted the original django site into this node/express version recently for the sake of curiousity.  
-            | There are some things I'd like to try with node that wouldn't have been as easy in django. 
-            | For example, I'm able to try html/css things out much quicker with jade.
-          | <br>
-          a(href="http://www.github.com/tippenein/brdyorn.com", target='_blank') Browse it on Github 
-        .project-text
+            | I adapted the original django site into this node/express version for the sake of curiousity. 
+            | From what I can tell so far node serves very well and simplifies a small site like this. The 
+            | package manager npm is great and javascripts prototypal system makes controllers and modules easy to write. 
+            | Node probably isn't worth all the hype, but it's working fine for me.
+            | <br>
+            a(href="http://www.github.com/tippenein/brdyorn.com", target='_blank').pull-right Browse it on Github 
+
+        .project-text.present
           //pots, fyi
           h4 Pots, fyi
-
+          a(class='project_image', href='/imgs/_posts/potsfyi.png').pull-right
+            img(src='/imgs/_posts/potsfyi.png', alt='', height=150,width=200)
           p
             a(href='http://twitter.com/graue') @graue 
             | started a music streaming app intended to run on a personal server.  
@@ -54,44 +72,43 @@ block content
             a(href='http://backbonejs.org') backbone, underscore, 
             a(href='http://handlebarsjs.com') handlebars 
             | and html5 audio
-          | <br>
-          a(class='project_image', href='/imgs/_posts/potsfyi.png')
-            img(src='/imgs/_posts/potsfyi.png', alt='', height=150,width=200)
-          | <br>
-          a(href='http://github.com/graue/potsfyi', target='_blank') Fork the original and help out
-    .span4  
-      .project-col2
-        h2 Past Projects
-        hr.dotted
-        .project-text
+            | <br>
+            a(href='http://github.com/graue/potsfyi', target='_blank').pull-right Fork the original and help out
+        .project-text.present
+          h4 Politifact scraper and datavis project
+          p
+            | I worked a bit at abstracting the scraper we used for the classroom_finder app and built one for politifact. 
+            | The eventual goal is to visualize the truthiness of government figures over time. It is using SQLAlchemy to make the 
+            | switch to postgresql or mysql easier (I'm using sqlite while testing).
+            | <br>
+            a(href="http://www.github.com/tippenein/fact_scrape", target='_blank').pull-right Browse it on Github
+        .project-text.past
           h4 Socket Programming for Networks 4211
-
           p
             | Fall semester of 2012 I finished a Networks project involving sockets which I wrote in Python.
             | This assignment was an 'atm' middleman which handled client transactions and handed them off to the bank server.  
             | I used select in python which is essentially the same as the equivalent C function to asynchronously 
             | handle up an arbitrary amount of client connections while the bank server will handle all the atm requested transactions. 
             | More details in the readme.md in the repo.
-          | <br>
-          a(href="http://www.bitbucket.org/tippenein/socket-assgn-4211", target='_blank') Browse it on Bitbucket
-        .project-text
+            | <br>
+            a(href="http://www.bitbucket.org/tippenein/socket-assgn-4211", target='_blank').pull-right Browse it on Bitbucket
+
+        .project-text.past
           //chatty.js
           h4 node.js chat using socket.io
-
           p
             | The ubiquitous node chat server!
             | Inspired by a school project where I wrote a chat client and server with python cgi and udp sockets, 
             | I wanted to see how easy it was to get the same functionality with node.
-
-          | <br>
-          a(href="http://www.github.com/tippenein/chatty", target='_blank') Browse it on Github 
-        .project-text  
+            | <br>
+            a(href="http://www.github.com/tippenein/chatty", target='_blank').pull-right Browse it on Github 
+        .project-text.past
           h4 Python send_to_kindle script
           p
             | The lack of a send_to_kindle for linux surprised me.. 
             | So I wrote a simple python script to send your ebooks to your kindle via the user@kindle.com email address
-          | <br>
-          a(href="https://github.com/tippenein/send_to_kindle", target='_blank') Fork away @ github
+            | <br>
+            a(href="https://github.com/tippenein/send_to_kindle", target='_blank').pull-right Fork away @ github
 
     append jsincludes
       script(src='/js/fancybox/jquery.fancybox.pack.js')
