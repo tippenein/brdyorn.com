@@ -1,3 +1,3 @@
-rewrite of brdyorn.com written with express and node
+personal site of Brady Ouren (brdyorn.com)
 
-use NODE_ENV=production to get production settings and development otherwise
+npm install packages.json
