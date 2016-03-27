@@ -1,14 +1,35 @@
 ---
-title: Home
+layout: default
+title: Brady Ouren (Tippenein)
 ---
 
-<h2>Welcome</h2>
+<div id="home">
+  <h1 class="section-block blog">Posts</h1>
+  <ul class="list-unstyled posts">
 
-<p>Welcome to my blog!</p>
+    $partial("templates/post-list.html")$
 
-<p>I've reproduced a list of recent posts here for your reading pleasure:</p>
+    <p>…or you can find more in the <a href="/archive.html">archives</a>.</p>
+  </ul>
 
-<h2>Posts</h2>
-$partial("templates/post-list.html")$
+  <h1 class="section-block projects">Projects</h1>
+  <table>
+    <tr>
+      <td><a href="https://www.github.com/tippenein/BankHoliday">Bank Holiday</a></td>
+      <td>A haskell library for bank holiday logic</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.github.com/tippenein/hasken">Hasken</a></td>
+      <td>Tagged data store with remote syncing</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.github.com/tippenein/ebook_library">Ebook Library</a></td>
+      <td>Ebook metadata dump for use with bookshelf</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.github.com/tippenein/bookshelf">Bookshelf</a></td>
+      <td>Visualize your local ebooks</td>
+    </tr>
+  </table>
+</div>
 
-<p>…or you can find more in the <a href="/archive.html">archives</a>.</p>

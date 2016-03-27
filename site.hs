@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid (mappend)
-import           Hakyll
+import Data.Monoid (mappend)
+import Hakyll
 
 main :: IO ()
 main = hakyll $ do
@@ -40,6 +40,14 @@ main = hakyll $ do
                 >>= relativizeUrls
 
 
+    -- Render RSS feed
+    match "rss.xml" $ route idRoute
+    create "rss.xml" $
+        requireAll_ "posts/*"
+            >>> arr dateOrdered
+            >>> arr reverse
+            >>> renderRss feedConfiguration
+
     match "index.html" $ do
         route idRoute
         compile $ do
@@ -63,3 +71,11 @@ postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
 
+feedConfiguration :: FeedConfiguration
+feedConfiguration = FeedConfiguration
+    { feedTitle       = "Brady Ouren's home page feed."
+    , feedDescription = "Brady Ouren's home page feed."
+    , feedAuthorName  = "Brady Ouren"
+    , feedAuthorEmail = "brdyorn@andand.co"
+    , feedRoot        = "http://brdyorn.com"
+    }
