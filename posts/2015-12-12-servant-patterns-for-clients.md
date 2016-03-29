@@ -15,7 +15,7 @@ I've picked up some patterns for writing clean haskell code from
 a working user client. 
 
 
-{% highlight haskell %}
+``` haskell
 data User = User {
     id             :: Int
   , email          :: Text
@@ -67,13 +67,13 @@ type DestroyUser = "user" :> "users"
 getUsers :<|> getUser :<|> createUser :<|> updateUser :<|> destroyUser =
   client (Proxy :: Proxy UserAPI) (BaseUrl Http "localhost" 5000)
 
-{% endhighlight %}
+```
 
 
 With these client functions defined and assuming you have a user service instance running on port 5000
 we can test this code out with `stack ghci servant-server servant-client --resolver=lts-3.14`
 
-{% highlight haskell %}
+``` haskell
 -- > :load Main.hs
 
 -- to get a specific user
@@ -82,7 +82,7 @@ run $ getUser 10001035
 -- to query on an attribute
 run $ getUsers Nothing (Just "garybusey@example.com")
 
-{% endhighlight %}
+```
 
 The only thing to add for production-ready status is a header with auth-tokens,
 but it really goes to show the ease of generating clients with Servant.

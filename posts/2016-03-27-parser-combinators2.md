@@ -31,7 +31,7 @@ a specific type of data.
 
 So, we'll create a data type deriving `Enum` to describe how we expect to split the data up.
 
-{% highlight haskell %}
+``` haskell
 
 data Signal
   = AD02 | AD11 | AH11 | AM01 |
@@ -44,12 +44,12 @@ data Signal
 allSignals :: [String]
 allSignals = map show [AD02 ..]
 
-{% endhighlight %}
+```
 
 Note: The syntax for `allSignals` is just enumerating all the constructors. (The
 space is significant  `[YourFirstEnum ..]`)
 
-{% highlight haskell %}
+``` haskell
 -- notice we're reusing this from the previous parser
 anythingUntil p = manyTill anyToken p
 
@@ -64,7 +64,7 @@ signalLookahead = lookAhead signalParser *> return ()
 signalParser :: Parser String
 signalParser = choice $ fmap try $ string <$> allSignals
 
-{% endhighlight %}
+```
 
 We're going to use the `anySignal` parser to pull out many pieces of content
 from a string, but the interesting part is the `signalParser` itself. `choice`
@@ -72,9 +72,9 @@ and `<|>` are the same, but we need to choose between _all_ the signals so we
 pass a list of Parsers. If it helps, it looks a bit like this if you were to
 expand it:
 
-{% highlight haskell %}
+``` haskell
 choice [(try $ string "AD02"), (try $ string "AD11"), ...]
-{% endhighlight %}
+```
 
 Another thing to note is the `signalLookahead`. We need to avoid eating up the
 next signal and just use it to signal the end of input.
@@ -85,9 +85,9 @@ Once again, there's a freeze of the jupyter notebook if you'd like to see it in 
 
 There are many more things we can do with our data in this format, but the first thing I would do is consume the data into some Map like this:
 
-{% highlight haskell %}
+``` haskell
 type SignalMap = Map.Map Signal String
-{% endhighlight %}
+```
 
 From here we'd want to inspect what each signal has inside of it, so we can
 take from this `Map` and further parse the string content.

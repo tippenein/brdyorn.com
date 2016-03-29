@@ -11,7 +11,7 @@ REST api in django.
 
 Say you need to return user info and the info given for user lookup fails.
 
-{% highlight python %}
+``` python
 import users
 import exceptions
 import rest_exceptions as rest_excs
@@ -23,7 +23,7 @@ try:
     user = users.get_user(input_name)
 except exceptions.NoSuchUser
     raise rest_exc.NoSuchUser
-{% endhighlight %}
+```
 
 - The `exceptions` import is for general error catching and it allows you to
   collect all your exception definitions for specific modules.
@@ -43,12 +43,12 @@ This is where the decorator comes in. It handles when a rest exception is raised
 
 You'd define the base exception class, `RestException` as:
 
-{% highlight python %}
+``` python
 class RestException(Exception):
     code = 500
     message = {"reason" : "failed"}
     response = None
-{% endhighlight %}
+```
 
 Define all the specific exceptions with this as the base class (ex. `PermissionDenied(RestException)`).  This way you can specify the status code and response for each type of exception.
 

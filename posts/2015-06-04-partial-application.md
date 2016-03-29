@@ -20,7 +20,7 @@ returning a `Day` which is exactly what we want.
 A common scenario for a bank holiday library is "first monday in *month*" and
 with our ability to pass in "months" to a function we define it this way:
 
-{% highlight haskell %}
+``` haskell
 [jan, feb, mar] = map (fromGregorian 1999) [1,2,3]
 
 firstMondayIn month = addDays offset (month 07)
@@ -28,7 +28,7 @@ firstMondayIn month = addDays offset (month 07)
     offset = negate (weekIndex (month 02))
 
 weekIndex day = toModifiedJulianDay day `mod` 7
-{% endhighlight %}
+```
 
 The most difficult part here was figuring out how Julian time worked, but the
 solution ends up being super readable.
@@ -36,7 +36,7 @@ solution ends up being super readable.
 The other scenario for describing US bank holidays is the case where a holiday
 falls on a weekend.
 
-{% highlight haskell %}
+``` haskell
 january_holidays = [weekendHolidayFrom (jan 1), weekendHolidayFrom (jan 20)]
 
 weekendHolidayFrom :: Day -> Maybe Day
@@ -44,15 +44,15 @@ weekendHolidayFrom d = case weekIndex d of
   3 -> Nothing            -- saturday
   4 -> Just (addDays 1 d) -- sunday
   _ -> Just d
-{% endhighlight %}
+```
 
 From here, we have a list of `Maybe Day`'s so we need to filter them down to
 `Day`s. There's probably a better way of doing this, but I used `mapMaybe`
 because of the type: `(a -> Maybe b) -> [a] -> [b]`
 
-{% highlight haskell %}
+``` haskell
 mapMaybe id january_holidays
-{% endhighlight %}
+```
 
 ### The subtle benefit
 

@@ -13,7 +13,7 @@ For example, say you're trying to test success and failure of 3 different
 authorization settings. You might try this to accomplish permission testing on
 each controller action:
 
-{% highlight ruby %}
+``` ruby
 before do
   permissions
 end
@@ -34,7 +34,7 @@ context "as a plebian user" do
   end
 end
 
-{% endhighlight %}
+```
 
 ### A more centralized solution
 
@@ -46,13 +46,13 @@ complex hierarchy of needs (If you don't now, you probably will in the future).
 
 Ideally we would want to test controller actions like this:
 
-{% highlight ruby %}
+``` ruby
 as_admin_on :some_resource do
   it "allows this action" do
     ...
   end
 end
-{% endhighlight %}
+```
 
 This shows clearly what permission level we expect right out front and doesn't
 require defining permission stubbing logic in each context. Luckily we can do
@@ -62,7 +62,7 @@ To centralize permission stubbing we use `support/controller_macros.rb` to
 contain all the contexts. (don't forget to add the module to your
 `rails_helper.rb`)
 
-{% highlight ruby %}
+``` ruby
 module ControllerMacros
   module ClassMethods
     def as_admin_on(resource_type, &block)
@@ -88,7 +88,7 @@ module ControllerMacros
     end
   end
 end
-{% endhighlight %}
+```
 
 This to me makes it very explicit what permission spec is being tested for each
 case and if stubbing methods change, you have one central location to change.

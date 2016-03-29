@@ -1,5 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
-import Data.Monoid (mappend)
+
+import Data.List
+import Data.Monoid
 import Hakyll
 
 main :: IO ()
@@ -40,18 +42,10 @@ main = hakyll $ do
                 >>= relativizeUrls
 
 
-    -- Render RSS feed
-    match "rss.xml" $ route idRoute
-    create "rss.xml" $
-        requireAll_ "posts/*"
-            >>> arr dateOrdered
-            >>> arr reverse
-            >>> renderRss feedConfiguration
-
     match "index.html" $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- loadAll "posts/*" >>= fmap (take 10) . recentFirst
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Home"                `mappend`
@@ -64,12 +58,25 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateCompiler
 
+    -- Render RSS feed
+    create ["rss.xml"] $ do
+        route idRoute
+        compile $ do
+            loadAllSnapshots "posts/*" "content"
+                >>= fmap (take 10) . recentFirst
+                >>= renderRss feedConfiguration feedCtx
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
+feedCtx :: Context String
+feedCtx = mconcat
+    [ bodyField "description"
+    , defaultContext
+    ]
 
 feedConfiguration :: FeedConfiguration
 feedConfiguration = FeedConfiguration

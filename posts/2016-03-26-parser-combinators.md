@@ -19,14 +19,14 @@ Say we have data that looks something like:
 First we decide what we're trying to pull out of this. These values happen to
 be space separated so we can just use the Prelude's `words`
 
-{% highlight haskell %}
+``` haskell
 words theString
 > ["1%400:3.2", "6%some_description|100:1"]
-{% endhighlight %}
+```
 
 Each string in this list we'll call a `Feature` so we write a data type for it:
 
-{% highlight haskell %}
+``` haskell
 data Feature
   = Feature
   { row        :: String
@@ -34,7 +34,7 @@ data Feature
   , value      :: String
   , descriptor :: Maybe String
   } deriving (Show)
-{% endhighlight %}
+```
 
 Notice that we're just reading this in as String data at the moment, but we can
 easily change that once we get the parsing structure down.
@@ -42,28 +42,28 @@ easily change that once we get the parsing structure down.
 Anyway, almost done with the easy stuff. We need to pull the garbage data out somehow.
 That's cool, we'll just write out our signal matchers.
 
-{% highlight haskell %}
+``` haskell
 breakSep = string "%"
 kvSep = string ":"
 descriptionSep = string "|"
-{% endhighlight %}
+```
 
 ### The Actual Parsing
 
 Since we'll be slurping up data until we hit one of the above defined
 separators, we'll make a parser to do just that:
 
-{% highlight haskell %}
+``` haskell
 anythingUntil :: Parser String -> Parser String
 anythingUntil p = manyTill anyToken (p *> return ())
-{% endhighlight %}
+```
 
 This function eats up any type of input until it hits one of our separators and
 returns everything before it.
 
 The way we'll use this is pretty simple
 
-{% highlight haskell %}
+``` haskell
 
 featureP :: Parser Feature
 featureP = do
@@ -73,14 +73,14 @@ featureP = do
   value <- manyTill anyToken eof -- get the remaining
   return $ Feature row col value desc
 
-{% endhighlight %}
+```
 
 Now we need to fill in the optional `descriptor` parser
 
-{% highlight haskell %}
+``` haskell
 descriptorP :: Parser (Maybe String)
 descriptorP = optionMaybe $ try $ anythingUntil descSep
-{% endhighlight %}
+```
 
 `optionMaybe` allows us to optionally consume some data and return a Maybe value.
 
