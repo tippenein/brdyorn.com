@@ -22,6 +22,10 @@ main = hakyll $ do
     route   idRoute
     compile copyFileCompiler
 
+  match "slides/*" $ do
+    route   idRoute
+    compile copyFileCompiler
+
   match "images/*" $ do
     route   idRoute
     compile copyFileCompiler

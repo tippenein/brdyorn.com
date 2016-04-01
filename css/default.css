@@ -103,8 +103,8 @@ a {
   color: #d4dc03;
 }
 
-.credit { float: left; }
-.mailto { float: right; }
+.left { float: left; }
+.right { float: right; }
 .wrapper {
   width:860px;
   margin:0 auto;
