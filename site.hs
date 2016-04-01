@@ -40,6 +40,7 @@ main = hakyll $ do
     route $ setExtension "html"
     compile $ pandocCompiler
       >>= loadAndApplyTemplate "templates/post.html"    postCtx
+      >>= saveSnapshot "content"
       >>= loadAndApplyTemplate "templates/default.html" postCtx
       >>= relativizeUrls
 
@@ -75,7 +76,7 @@ main = hakyll $ do
   match "templates/*" $ compile templateCompiler
 
   -- Render RSS feed
-  create ["rss.xml"] $ do
+  create ["feed.xml"] $ do
     route idRoute
     compile $
       loadAllSnapshots "posts/*" "content"
@@ -84,7 +85,7 @@ main = hakyll $ do
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
-postCtx = dateField "date" "%B %e, %Y" <> defaultContext
+postCtx = dateField "date" "%b %e, %Y" <> defaultContext
 
 feedCtx :: Context String
 feedCtx = mconcat

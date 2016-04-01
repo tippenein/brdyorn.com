@@ -103,6 +103,8 @@ a {
   color: #d4dc03;
 }
 
+.credit { float: left; }
+.mailto { float: right; }
 .wrapper {
   width:860px;
   margin:0 auto;
@@ -145,6 +147,10 @@ section {
   width:760px;
 }
 
+footer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 hr {
   border:0;
   background:#e5e5e5;
