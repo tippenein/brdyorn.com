@@ -11,8 +11,7 @@ Being bad at something and realizing it is the first step to being slightly bett
 
 This quote should probably be taken with a grain of salt since it came from this guy...
 
-![roosevelt riding a moose](/assets/images/posts/roosevelt-moose.jpg)
-
+![roosevelt riding a moose](/images/roosevelt-moose.jpg)
 
 ### Smail's Three laws
 The initial reason for this post was Smail's 3 Laws of Psychology but honestly, pictures of Teddy Roosevelt are much more entertaining. Despite that, these 3 laws seem applicable to the situation.
@@ -26,7 +25,4 @@ __Law 1__ "Absolutely everybody wants to be liked".
 __Law 2__ "Everyone feels different inside (less confident, less able, etc.) from how they infer other people to feel".
 
 __Law 3__ "Few honest and courageous people who have achieved anything of real value in life do not feel a fraud much of the time".
-
-
-
 
