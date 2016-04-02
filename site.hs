@@ -18,6 +18,10 @@ contentPage title = do
 main :: IO ()
 main = hakyll $ do
 
+  match "resume.pdf" $ do
+    route   idRoute
+    compile copyFileCompiler
+
   match "keybase.txt" $ do
     route   idRoute
     compile copyFileCompiler
