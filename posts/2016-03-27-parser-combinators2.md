@@ -6,7 +6,7 @@ tags: [parsers, haskell, parsec, regex]
 
 ### P▲rT2
 
-In the [previous post](/2016/03/26/parser-combinators) I showed how to use
+In the [previous post](/posts/2016-03-26-parser-combinators.html) I showed how to use
 [parsec](https://www.stackage.org/package/parsec) to parse data in a format like this:
 
 `"1%400:3.2 6%some_description|100:1"`

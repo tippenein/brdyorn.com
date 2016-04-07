@@ -11,8 +11,11 @@ clean:
 build:
 	${CMD} build
 
-deploy: clean build
-	${CMD} deploy
+deploy:
+	cp -r _site/* ../tippenein.github.io/
 
 watch: clean
 	${CMD} watch
+
+serve:
+	${CMD} serve

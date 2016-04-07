@@ -91,6 +91,6 @@ Since the the anythingUntil parser _can_ fail in this case, we need to use
 
 Personally, I find this easier to reason about than a regex or generic
 string functions. The point here is that I can easily expand on this and add
-new detailed parsers (This will be covered in [part 2](/2016/03/27/parser-combinators2))
+new detailed parsers (This will be covered in [part 2](/posts/2016-03-27-parser-combinators2.html))
 
 I've included a snapshot of the ihaskell session I was working in for full context [here](/slides/features_ipynb.html)
