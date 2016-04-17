@@ -15,6 +15,21 @@ contentPage title = do
       >>= loadAndApplyTemplate "templates/default.html" indexCtx
       >>= relativizeUrls
 
+listPage title content templateName ctx = do
+    route idRoute
+    compile $ do
+      items <- loadAll $ fromGlob (content ++ "/*")
+      let theCtx =
+              listField content ctx (return items)
+           <> constField "title" title
+           <> defaultContext
+          theFilePath = fromFilePath ("templates/" ++ templateName ++ ".html")
+
+      makeItem ""
+        >>= loadAndApplyTemplate theFilePath theCtx
+        >>= loadAndApplyTemplate "templates/default.html" theCtx
+        >>= relativizeUrls
+
 main :: IO ()
 main = hakyll $ do
 
@@ -46,20 +61,9 @@ main = hakyll $ do
       >>= loadAndApplyTemplate "templates/default.html" postCtx
       >>= relativizeUrls
 
-  create ["archive.html"] $ do
-    route idRoute
-    compile $ do
-      posts <- recentFirst =<< loadAll "posts/*"
-      let archiveCtx =
-              listField "posts" postCtx (return posts)
-           <> constField "title" "Archives"
-           <> defaultContext
+  create ["slides.html"] $ listPage "Slides" "slide" "slides" slideCtx
 
-      makeItem ""
-        >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-        >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-        >>= relativizeUrls
-
+  create ["archive.html"] $ listPage "Archives" "posts" "archive" postCtx
 
   match "index.html" $ do
     route idRoute
@@ -88,6 +92,9 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx = dateField "date" "%b %e, %Y" <> defaultContext
+
+slideCtx :: Context String
+slideCtx = defaultContext
 
 feedCtx :: Context String
 feedCtx = mconcat
