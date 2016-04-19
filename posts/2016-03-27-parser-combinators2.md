@@ -94,7 +94,7 @@ take from this `Map` and further parse the string content.
 
 ### Credit
 
-Thanks a bunch to both of these resources (which are far both better and more comprehensive than this):
+Thanks a bunch to both of these resources (which are both far better and more comprehensive than this):
 
 - [https://github.com/JakeWheat/intro_to_parsing](https://github.com/JakeWheat/intro_to_parsing)
 - [http://unbui.lt/#!/post/haskell-parsec-basics/](http://unbui.lt/#!/post/haskell-parsec-basics/)

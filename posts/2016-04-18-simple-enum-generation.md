@@ -12,13 +12,15 @@ tags: [enum, th, template-haskell, haskell, meta-programming]
 import Language.Haskell.TH
 
 declareAnimals :: [String] -> Q [Dec]
-declareAnimals animals = return [DataD constraints name vars cons derives] where
-  constraints = []
-  name        = mkName "Animal"
-  vars        = []
-  cons        = map (\a -> NormalC (mkName a) fields) animals
-  fields      = []
-  derives     = [''Show, ''Eq, ''Ord, ''Enum, ''Read]
+declareAnimals animals =
+  return [DataD constraints name vars cons derives]
+    where
+      constraints = []
+      name        = mkName "Animal"
+      vars        = []
+      cons        = map (\a -> NormalC (mkName a) fields) animals
+      fields      = []
+      derives     = [''Show, ''Eq, ''Ord, ''Enum, ''Read]
 ```
 
 ``` haskell

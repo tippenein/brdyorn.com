@@ -84,7 +84,7 @@ descriptorP = optionMaybe $ try $ anythingUntil descSep
 
 `optionMaybe` allows us to optionally consume some data and return a Maybe value.
 
-Since the the anythingUntil parser _can_ fail in this case, we need to use
+Since the anythingUntil parser _can_ fail in this case, we need to use
 `try` to save us from erroring out.
 
 ### The Benefit over X
