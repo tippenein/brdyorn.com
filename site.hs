@@ -18,7 +18,7 @@ contentPage title = do
 listPage title content templateName ctx = do
     route idRoute
     compile $ do
-      items <- loadAll $ fromGlob (content ++ "/*")
+      items <- loadAll (fromGlob (content ++ "/*")) >>= recentFirst
       let theCtx =
               listField content ctx (return items)
            <> constField "title" title
