@@ -87,6 +87,10 @@ a {
   text-decoration: none !important;
 }
 
+.post-meta {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
 .header-link {
   color: #2e001a; /* #98fb98; */
   transition: all 500ms ease 0ms;
