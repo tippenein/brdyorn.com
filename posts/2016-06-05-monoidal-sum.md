@@ -10,9 +10,10 @@ and Abelian Groups. I thought it would be helpful to work through what he was
 explaining with haskell, so here we go.
 
 The first thing discussed is a simple summing with a monoid. We need implementations for:
-  - mempty: somewhere to start; something that won't affect the outcome of the sum.
-  - mappend: a way of combining 2 instances together, (we'll use the infix notation or `<>`)
-  - mconcat: a way of combining a list of instances together down into a single instance (a fold)
+
+- mempty: somewhere to start; something that won't affect the outcome of the sum.
+- mappend: a way of combining 2 instances together, (we'll use the infix notation or `<>`)
+- mconcat: a way of combining a list of instances together down into a single instance (a fold)
 
 The point of this abstraction is to easily allow a fold (reduce) of any data type into itself.
 It doesn't _have_ to be commutative, but these monoid instances happen to be. (Abelian groups however, _have_ to be commutative)
@@ -30,10 +31,12 @@ instance Monoid Collection where
 That isn't an astounding monoid instance by any means, but it allows us to do simple summing:
 
 ```haskell
-mconcat [Collection 1, Collection 10, Collection 20] -- Collection {theSum = 31}
+mconcat [Collection 1, Collection 10, Collection 20]
+-- > Collection {theSum = 31}
 
 -- <> is just an operator equivalent to mappend
-Collection 1 <> Collection 2 -- Collection { theSum = 3 }
+Collection 1 <> Collection 2
+-- > Collection { theSum = 3 }
 ```
 
 ### Part 2 - A simple Averaging aggregation
@@ -41,7 +44,9 @@ Collection 1 <> Collection 2 -- Collection { theSum = 3 }
 The next step is to average the sum as we go.
 
 ```haskell
-data Collection = Collection { theSum :: Integer, avg :: Maybe Double }
+data Collection = Collection 
+  { theSum :: Integer
+  , avg :: Maybe Double }
 ```
 
 What we'd expect with this is `Collection 1 1 <> Collection 10 10` to equal
@@ -55,7 +60,7 @@ and write a quickcheck property for counting:
 
 ```haskell
 -- btw, the data type now looks like:
--- data Collection = Collection { theSum :: Integer, count :: Integer, avg :: Maybe Double }
+-- { theSum :: Integer, count :: Integer, avg :: Maybe Double }
 it "counts consistently" $ property $ \n ->
   count (mconcat $ replicate n justOnes) `shouldEqual` n
 ```
@@ -80,12 +85,12 @@ look [here](https://github.com/tippenein/commutative-monoid-example)
 instance Monoid Collection where
   mempty = Collection 0 0 Nothing
   -- The cases where average is Nothing are omitted
-  (Collection sum1 count1 (Just avg1)) `mappend` (Collection sum2 count2 (Just avg2)) =
-    Collection (sum1 + sum2) (count1 + count2) average
+  (Collection s1 c1 (Just avg1)) `mappend` (Collection s2 c2 (Just avg2)) =
+    Collection (s1 + s2) (c1 + c2) average
     where
       average = Just $
-        ((avg1 * fromInteger count1) + (avg2 * fromInteger count2)) /
-          (fromInteger count1 + fromInteger count2)
+        ((avg1 * fromInteger c1) + (avg2 * fromInteger c2))
+          / (fromInteger c1 + fromInteger c2)
   mconcat = foldl' mconcat mempty
 ```
 
@@ -100,8 +105,8 @@ We might as well drive the implementation with specs since the intention is well
 
 ```haskell
 -- I usually write the intended data type first then use that interface to build specs.
--- so here's our new data type for top10 collections
--- data CollectionTops = CollectionTops { aSum :: Integer, tops :: [Integer] }
+-- so here's our new fields for the CollectionTops data type
+-- { aSum :: Integer, tops :: [Integer] }
 
 topsCollection1 = CollectionTops 1 (reverse [1..10])
 
@@ -121,25 +126,29 @@ revSort = sortBy (flip compare)
 instance Monoid CollectionTops where
   mempty = CollectionTops 0 negativeInfinities
   CollectionTops s1 tops1 `mappend` CollectionTops s2 tops2 =
-    CollectionTops (s1 + s2) (take 10 $ revSort ([s1] ++ [s2] ++ tops1 ++ tops2))
+    CollectionTops {
+      aSum = s1 + s2
+    , tops = take 10 $ revSort ([s1] ++ [s2] ++ tops1 ++ tops2) }
   mconcat = foldl' mappend mempty
 ```
 
-### Part 4 - Sum up (no pun intended)
+### Part 4 - Sum up (pun intended)
 
 In his talk, Avi obviously goes further than this, however, this post is already becoming
-too long, but a few of the other uses hinted at are
+too long. Other uses hinted at include
 [skewness](https://en.wikipedia.org/wiki/Skewness),
 [kurtosis](https://en.wikipedia.org/wiki/Kurtosis), histograms, and unique
 visitors. The above implementations are intended to give an intuition about
 commutative monoids as a tool for aggregation.
 
 To sum up...
+
 - we need 3 functions for a monoid instance: mempty, mappend, and
-mconcat. 
+  mconcat. 
 - If you can define mappend, the other 2 should be easy (I've noticed
-that mconcat is mostly just used to provide a faster implementation of the
-standard `foldr mappend mempty`). 
+  that mconcat is mostly just used to provide a faster implementation of the
+  standard `foldr mappend mempty`). 
 - The monoid laws ensure associativity, but we have to be explicit about our commutative intentions.
 
-I hope this calms your nerves about monoids and perhaps provides a bit of intuition about what _is_ or _could be_ a monoid.
+I hope this calms your nerves about monoids and perhaps provides a bit of
+intuition about what _is_ or _could be_ a monoid.
