@@ -3,6 +3,9 @@ layout: post
 title: Servant Patterns for Clients
 ---
 
+Edit: I believe Servant has changed its Client api; I'll link to an update when
+one exists.
+
 ### Clients for Free
 
 The unfortunate reality of many of our day jobs is that we are _not_ able to
