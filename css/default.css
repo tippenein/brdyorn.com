@@ -1,4 +1,14 @@
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
     margin: 0px;
     font-family: 'Raleway', sans-serif;
@@ -6,6 +16,17 @@ body {
     color:#111;
     font-weight:300;
     font-size: 20px;
+    position: relative;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+.container {
+   min-height:100%;
+   position:relative;
+}
+.header {
+   background:#ff0;
+   padding:10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,9 +57,6 @@ h1 {
   font-size:28px;
 }
 
-.archive {
-    padding-right: 10px;
-}
 .post-body {
     width: 860px;
     margin: auto;
@@ -84,7 +102,10 @@ a.header-link:hover {
 a:hover {
   color: #00bf0c;
 }
-
+section {
+  margin: 0 auto;
+  padding-bottom: 12px;
+}
 h1.section-block {
   padding: 12px;
 }
@@ -132,8 +153,16 @@ ul.social {
   color: #d4dc03;
 }
 
-.left { float: left; }
-.right { float: right; }
+.left {
+    float: left;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+.right {
+    float: right;
+    padding-right: 10px;
+    margin-right: 10px;
+}
 .wrapper {
   width:860px;
   margin:0 auto;
@@ -171,9 +200,19 @@ img {
 }
 
 footer {
-  padding-left: 10px;
-  padding-right: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }
+
+/* div#home { */
+/*   margin: 0 auto; */
+/*   padding-top: 64px; */
+/*   max-width: 640px; */
+/*   width: 94%; */
+/* } */
 hr {
   border:0;
   background:#e5e5e5;
