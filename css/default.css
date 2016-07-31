@@ -75,11 +75,11 @@ h1 {
   margin-right:auto;
 }
 h2 {
-  color:#393939;
+  color:#334455;
 }
 
 h3, h4, h5, h6 {
-  color:#494949;
+  color:#334455;
 }
 
 header {
@@ -97,7 +97,12 @@ p.name {
 
 a.header-link:hover {
   color: #fffe2f;
+}
 
+a {
+  color:#798889;
+  font-weight:400;
+  text-decoration: none !important;
 }
 a:hover {
   color: #00bf0c;
@@ -107,18 +112,9 @@ section {
   padding-bottom: 12px;
 }
 h1.section-block {
+  color: #e5e5e5;
+  background-color: #334455;
   padding: 12px;
-}
-h1.projects {
-  background-color: #ff9c00;
-}
-h1.blog {
-  background-color: #0d5fc2;
-}
-a {
-  color:#23527c;
-  font-weight:400;
-  text-decoration: none !important;
 }
 
 .post-meta {
@@ -127,7 +123,7 @@ a {
 }
 
 .header-link {
-  color: #2e001a; /* #98fb98; */
+  color: #334455;
   transition: all 500ms ease 0ms;
   transform: translateZ(0px);
   float: left;
