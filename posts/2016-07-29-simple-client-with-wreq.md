@@ -117,3 +117,11 @@ getRecentPath = do
 This could be improved by returning an `Either String FilePath` instead of
 raising an error, but if we stopped and optimized every chance we had in haskell
 we'd never finish writing what we started.
+
+At the end of all this, we can screen cap and pop over to a terminal:
+
+```shell
+imgup --screenshot | pbcopy
+```
+
+Now we have a imgur link in our copy buffer which (for me) completely replaces monosnap's functionality.
