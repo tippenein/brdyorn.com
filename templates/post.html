@@ -11,4 +11,22 @@
     <h2 class="post-title">$title$</h2>
   </div>
   $body$
+
+  <div class="pager">
+    <ul class="list-unstyled list-inline">
+      $if(prevPost)$
+        <li class="previous left">
+          <a class="button" href="$prevPost$" data-toggle="tooltip" data-placement="top" title="Previous Post">&larr; Previous Post</a>
+        </li>
+      $endif$
+
+      $if(nextPost)$
+        <li class="next right">
+          <a class="button" href="$nextPost$" data-toggle="tooltip" data-placement="top" title="Next Post">Next Post &rarr;</a>
+        </li>
+      $endif$
+    </ul>
+  </div>
+  <br>
+  <br>
 </div>

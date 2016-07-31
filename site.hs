@@ -2,6 +2,8 @@
 
 import Data.List
 import Data.Monoid
+import Data.Maybe
+import Control.Lens hiding (Context(..))
 import Hakyll
 
 contentPage :: String -> Rules ()
@@ -89,9 +91,33 @@ main = hakyll $ do
         >>= fmap (take 10) . recentFirst
         >>= renderRss feedConfiguration feedCtx
 
---------------------------------------------------------------------------------
+-----------------------util-----------------------------------------------------
+
 postCtx :: Context String
-postCtx = dateField "date" "%b %e, %Y" <> defaultContext
+postCtx =
+  dateField "date" "%b %e, %Y" <>
+  field "nextPost" nextPostUrl <>
+  field "prevPost" previousPostUrl <>
+  defaultContext
+
+postUrlAdjacent :: Item String -> (Int -> Int -> Int) -> Compiler String
+postUrlAdjacent post fn = do
+  posts <- getMatches "posts/**.md"
+  let ident = itemIdentifier post
+      postIndex = fromMaybe 0 $ elemIndex ident (sort posts)
+      maybePost = posts ^? element (fn postIndex 1)
+
+  case maybePost of
+    Just p -> (fmap (maybe mempty $ toUrl) . getRoute) p
+    Nothing -> pure mempty
+
+previousPostUrl :: Item String -> Compiler String
+previousPostUrl post = do
+  postUrlAdjacent post (-)
+
+nextPostUrl :: Item String -> Compiler String
+nextPostUrl post = do
+  postUrlAdjacent post (+)
 
 slideCtx :: Context String
 slideCtx = defaultContext
