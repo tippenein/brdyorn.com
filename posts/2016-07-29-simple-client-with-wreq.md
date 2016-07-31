@@ -72,7 +72,7 @@ Fortunately, our code using Lens' is much more fail-safe. (you could read more
 [here](http://lens.github.io/tutorial.html) or one of the plethora of other
 lens tutorials online)
 
-the actual post is pretty self explanatory if you know what `authHeader` and
+The actual post is pretty self explanatory if you know what `authHeader` and
 `payload` are, but here's the type sig anyway:
 
 ```haskell
@@ -124,4 +124,4 @@ At the end of all this, we can screen cap and pop over to a terminal:
 imgup --screenshot | pbcopy
 ```
 
-Now we have a imgur link in our copy buffer which (for me) completely replaces monosnap's functionality.
+Now we have an imgur link in our copy buffer which (for me) completely replaces monosnap's functionality.

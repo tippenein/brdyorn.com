@@ -1,11 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
 body {
-  font-family: 'Lato', sans-serif;
-  text-decoration:none;
-  color:#111;
-  font-weight:300;
-  font-size: 20px;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+    text-decoration:none;
+    color:#111;
+    font-weight:300;
+    font-size: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,9 +36,23 @@ h1 {
   font-size:28px;
 }
 
+.archive {
+    padding-right: 10px;
+}
+.post-body {
+    width: 860px;
+    margin: auto;
+}
+.content {
+    margin: 4px;
+    width: 100%;
+    margin: auto;
+}
+
 .profile {
   font-family: "Abel",sans-serif;
   padding: 12px;
+  margin: 0px;
   margin-left:auto;
   margin-right:auto;
 }
@@ -52,7 +66,6 @@ h3, h4, h5, h6 {
 
 header {
   text-align:left;
-  line-height: 1;
   background-color: #00bf0c;
 }
 
@@ -91,6 +104,7 @@ a {
   padding-top: 6px;
   padding-bottom: 6px;
 }
+
 .header-link {
   color: #2e001a; /* #98fb98; */
   transition: all 500ms ease 0ms;
@@ -98,9 +112,20 @@ a {
   float: left;
 }
 
-.social {
+.list-unstyled {
+  list-style: none;
+}
+
+ul.list-inline li {
+    margin-top: 12px;
+    margin-bottom: 0px;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+ul.social {
   float: right;
-  vertical-align: center
 }
 
 .social:hover {
@@ -145,12 +170,6 @@ img {
   max-width:100%;
 }
 
-section {
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
-}
-
 footer {
   padding-left: 10px;
   padding-right: 10px;
@@ -173,13 +192,6 @@ hr {
     float:none;
     position:static;
     width:auto;
-  }
-
-  section {
-    border:1px solid #e5e5e5;
-    border-width:1px 0;
-    padding:20px 0;
-    margin:0 0 20px;
   }
 }
 
