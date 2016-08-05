@@ -64,14 +64,17 @@ even write specs.
 
 _PSA: To be clear, I'm not saying "don't write tests"; I'm saying "We can get away with far fewer!"_
 
-When you make changes to an Api, you should feel comfortable updating the frontend to match those changes.
+When you make changes to an Api, you should feel comfortable updating the
+frontend to match those changes. Types should help not hinder in this regard.
+For more context I like
+[this](https://www.well-typed.com/blog/2014/04/haskell-gets-static-typing-right/)
+sum-up from Well-Typed.
 
-We can use type inference to forego specifying types while we prototype in
-_both_ languages and still get the benefit of compiler aided debugging.
+> If you give your program precise types and follow systematic design principles, your program almost writes itself.
 
 As an example of using a compiler to guide feature implementation, let's look at actions in Hasken's interface:
 
-```elm
+```haskell
 type Action
   = FetchDocuments
   | ErrorOccurred String
@@ -83,7 +86,7 @@ compiler will force us to deal with every case.
 
 Our `model` holds the data which we're trying to represent.
 
-```elm
+```haskell
 model : Model
 model =
   { documents = Right []
@@ -107,7 +110,7 @@ It tells us that our `update` function doesn't handle the `Search` action case..
 
 Our current update looks something like this:
 
-```elm
+```haskell
 update : Action -> Model -> (Model, Cmd Action)
 update action model =
   case action of
@@ -127,13 +130,13 @@ This method returns an updated model with some possible `Cmd Action`. If we're
 going to fix the compilation error, we need to pattern match `Search term` and
 tell it how to react.
 
-```elm
+```haskell
 Search term -> model ! [searchDocs term]
 ```
 
 Now we define the function to fetch documents:
 
-```elm
+```haskell
 getDocs : Maybe (List (String, String)) -> Cmd Action
 getDocs mquery_params =
     let url = Http.url docUrl (fromMaybe [] q)
@@ -153,7 +156,7 @@ getDocs mquery_params =
 The next compiler error will tell us that we don't have an interface component to _trigger_ the `Search` action.
 We'll be able to succinctly express this in our interface via the `view` function.
 
-```elm
+```haskell
 view : Model -> Html Action
 view model =
   div []
