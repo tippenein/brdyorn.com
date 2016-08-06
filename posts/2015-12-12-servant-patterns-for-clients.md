@@ -3,8 +3,7 @@ layout: post
 title: Servant Patterns for Clients
 ---
 
-Edit: I believe Servant has changed its Client api; I'll link to an update when
-one exists.
+Edit: Servant has changed its Client api, but [this](/posts/2016-08-06-upgrading-servant-client-from-zero-four.md) is a post about how to migrate to the new way of deriving clients.
 
 ### Clients for Free
 

@@ -4,3 +4,9 @@ DATE=$(date -u +%Y-%m-%d)
 FILENAME=$(dirname $0)/posts/"$DATE"-"$1".md
 
 touch $FILENAME
+
+echo -e "---\n\
+layout: post\n\
+title: $1\n\
+tags: []\n\
+---\n" >> $FILENAME
