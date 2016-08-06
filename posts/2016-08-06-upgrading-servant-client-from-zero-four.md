@@ -8,7 +8,12 @@ A few things have changed with Servant's client deriving between `0.4` and `0.7`
 
 ### Follow the types
 
-First thing you'll notice after 
+First thing you'll notice after building your project with the 0.7 version of
+servant client is some failing functions. Let's follow the types and do what
+they tell us.
+
+The first error is that BaseUrl takes an extra "path" argument. It's just a string; ghc tells us this.
+
 ```haskell
 makeBaseUrl = do
   h <- Config.domain <$> Config.remoteConfig
@@ -18,7 +23,7 @@ makeBaseUrl = do
   pure $ BaseUrl Http h p ""
 ```
 
-Now we use ExceptT instead of EitherT. It's better
+Now we use ExceptT instead of EitherT. It's better, and ghc tells us that's what it's expecting.
 
 ```haskell
 type Action a = ExceptT ServantError IO a
@@ -28,6 +33,9 @@ This type alias has existed as `ClientM` and `Handler` (see
 [this](https://github.com/haskell-servant/servant/issues/467) and
 [this](https://github.com/haskell-servant/servant/issues/434)) but I prefer to
 write this explicitly and forego all the changes that might happen in servant.
+
+The next compiler error says something about an expected Manager argument to
+one of our bound client functions.
 
 ### Http manager
 
@@ -45,10 +53,11 @@ run action = do
 ```
 
 Essentially we only needed to pass 2 new arguments to the action (the derived
-functions from `client`) and run them inside `runExceptT` instead of
-`runEitherT`.
+functions from `client`) and run them inside `runExceptT`.
 
-The last compiler error you'll get is an extra argument to `client` which is just a remnant you can delete.
+The last compiler error you'll get is an extra argument to `client` which is
+just a remnant you can delete. It was previously the BaseUrl argument, but
+we've already moved that to the `run` function.
 
 ```haskell
 listDocuments' :<|> createDocument' =
