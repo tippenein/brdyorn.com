@@ -20,6 +20,10 @@ body {
     padding-bottom: 6rem;
     min-height: 100%;
 }
+.post-body {
+    max-width: 860px;
+    margin: auto;
+}
 .wrapper {
     margin: 0 auto;
     padding: 0;
@@ -107,7 +111,7 @@ a:hover {
   color: #00bf0c;
 }
 .sourceCode {
-  overflow: scroll;
+  overflow: auto;
 }
 section {
   padding-bottom: 12px;
