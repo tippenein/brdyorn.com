@@ -115,7 +115,7 @@
 <p>Reflex &amp; Reflex Dom</p>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 413px; left: 41px; top: 237px;" data-block-id="7b6f0549dbd1091de092aa567e275d25"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
-<p style="text-align:left"><em>Reflex is an fully-deterministic, higher-order Functional Reactive Programming (FRP) interface and an engine that efficiently implements that interface.</em></p>
+<p style="text-align:left"><em>Reflex is a fully-deterministic, higher-order Functional Reactive Programming (FRP) interface and an engine that efficiently implements that interface.</em></p>
 
 <p style="text-align:left"> </p>
 
@@ -984,7 +984,10 @@ view model = div "wrapper" $ do
   rsp :: Event t XhrResponse &lt;- performRequestAsync $ mkReq &lt;$&gt; requestEvent
   let booksResponse :: Event t [Book] = books &lt;$&gt; fmapMaybe decodeXhrResponse rsp
 </code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 770px; height: 36px; left: 95px; top: 594px;" data-block-id="8b625f5fa67f1f892171d0d992edae78"><div class="sl-block-content" style="z-index: 12;" data-highlight-theme="solarized-dark"><pre class="haskell"><code>decodeXhrResponse :: FromJSON a =&gt; XhrResponse -&gt; Maybe a</code></pre></div></div></section><section data-id="2e9e749789219dba4c4421a3023666b6"><div class="sl-block" data-block-type="code" style="width: 770px; height: 437px; left: 95px; top: 123px;" data-block-id="486db20e75e9c6c93a33928cc14f3c2a"><div class="sl-block-content" style="z-index: 11;" data-highlight-theme="solarized-dark"><pre class="haskell"><code>view :: MonadWidget t m =&gt; Dynamic t Model -&gt; m (Event t Action)
+<div class="sl-block" data-block-type="code" style="width: 770px; height: 70px; left: 95px; top: 560px;" data-block-id="8b625f5fa67f1f892171d0d992edae78"><div class="sl-block-content" style="z-index: 12;" data-highlight-theme="solarized-dark"><pre class="haskell"><code>decodeXhrResponse :: FromJSON a =&gt; XhrResponse -&gt; Maybe a
+
+update (BooksResponse rsp) m = m { _books = Map.fromList $ zip [(1::Int)..] rsp }
+</code></pre></div></div></section><section data-id="2e9e749789219dba4c4421a3023666b6"><div class="sl-block" data-block-type="code" style="width: 770px; height: 437px; left: 95px; top: 123px;" data-block-id="486db20e75e9c6c93a33928cc14f3c2a"><div class="sl-block-content" style="z-index: 11;" data-highlight-theme="solarized-dark"><pre class="haskell"><code>view :: MonadWidget t m =&gt; Dynamic t Model -&gt; m (Event t Action)
 view model = div "wrapper" $ do
   postBuild &lt;- getPostBuild
   q &lt;- Component.searchInput
@@ -1076,6 +1079,21 @@ instance Reflex t =&gt; Monad (UniqDynamic t) where
 <a href="https://github.com/mightybyte/reflex-2048" target="_blank">mightybyte/reflex-2048</a></p>
 
 <p><a href="https://github.com/BartAdv/elm-architecture-tutorial-reflex" target="_blank">BartAdv/elm-architecture-tutorial-reflex</a></p>
+</div></div></section><section data-id="27b25ce656cc1fba0e3ccd874f8c4b9e"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 87px;" data-block-id="173e485096d33ada9520b5c5ddf97728"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; font-size: 125%;">
+<p><strong>Exciting bits</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 332px;" data-block-id="51c928de8edbaf55de5a4748b0fb1eb0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>GHCJS seems promising (utilize existing haskell)</p>
+
+<p>Utilizing Lens, TH, Generics, etc in libraries</p>
+
+<p>Dead Reckoning ?</p>
+
+<p>Mature but relatively new</p>
+
+<p> </p>
+
+<p> </p>
 </div></div></section><section data-id="00d1a3adc648cdc80eabe5df52353767"><div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 480px; height: 510px; left: 480px; top: 34px;" data-block-id="48a3b02eeef3c0b59ead33d190757e19"><div class="sl-block-content" style="z-index: 11; font-size: 95%;" data-highlight-theme="solarized-dark"><pre class="haskell"><code>data SquareStatus = SquareMerged | SquareNew
   deriving (Eq,Ord,Show,Read)
 
@@ -1224,7 +1242,7 @@ main = routeSite $ \uri -&gt; do
 
 		
 <script>
-	var SLConfig = {"current_user":{"id":367691,"username":"bradyouren-1","name":"Brady Ouren","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-49M4U99XcLQ/AAAAAAAAAAI/AAAAAAAAADY/RBr_1PNlop4/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":202788,"present_controls":true,"present_upsizing":true,"present_notes":true,"editor_grid":true,"editor_snap":true,"developer_mode":false,"speaker_layout":null},"email":"brady.ouren@gmail.com","notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1},"deck":{"id":848194,"slug":"deck-4","title":"Reflex FRP \u0026 the DOM","description":"building reflex apps using FRP","visibility":"all","published_at":"2016-11-06T00:44:35.972Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/41b96cc7cb92c59e59a5f4fb19608fdb/thumb.jpg","view_count":1,"user":{"id":367691,"username":"bradyouren-1","name":"Brady Ouren","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-49M4U99XcLQ/AAAAAAAAAAI/AAAAAAAAADY/RBr_1PNlop4/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":202788,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"none","theme_id":null,"theme_font":"overpass2","theme_color":"yellow-black","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":false,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1480467554932,"font_typekit":null,"font_google":null,"access_token":"x4B5Lv49AvDpfq2NuXMs2mGrYxcr","notes":{"e44fd88f132358921c97dcc9ad1feca5":"usually events carry a value\nthese events are just indicators of clicks","c9b2ba326aa49a203214662054a6abbf":"    FRP\n    Behavior, Event, Dynamic (The Triforce)\n    Reflex and the Dom\n    Using FRP to build reflex apps\n    Styling with function / functioning with style\n    FFI\n    Requesting API endpoints\n    Going Further"}}};
+	var SLConfig = {"current_user":{"id":367691,"username":"bradyouren-1","name":"Brady Ouren","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-49M4U99XcLQ/AAAAAAAAAAI/AAAAAAAAADY/RBr_1PNlop4/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":202788,"present_controls":true,"present_upsizing":true,"present_notes":true,"editor_grid":true,"editor_snap":true,"developer_mode":false,"speaker_layout":null},"email":"brady.ouren@gmail.com","notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1},"deck":{"id":848194,"slug":"deck-4","title":"Reflex FRP \u0026 the DOM","description":"building reflex apps using FRP","visibility":"all","published_at":"2016-11-06T00:44:35.972Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/41b96cc7cb92c59e59a5f4fb19608fdb/thumb.jpg","view_count":1,"user":{"id":367691,"username":"bradyouren-1","name":"Brady Ouren","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-49M4U99XcLQ/AAAAAAAAAAI/AAAAAAAAADY/RBr_1PNlop4/photo.jpg?sz=50","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":202788,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"none","theme_id":null,"theme_font":"overpass2","theme_color":"yellow-black","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":false,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1480473775806,"font_typekit":null,"font_google":null,"access_token":"x4B5Lv49AvDpfq2NuXMs2mGrYxcr","notes":{"e44fd88f132358921c97dcc9ad1feca5":"usually events carry a value\nthese events are just indicators of clicks","c9b2ba326aa49a203214662054a6abbf":"    FRP\n    Behavior, Event, Dynamic (The Triforce)\n    Reflex and the Dom\n    Using FRP to build reflex apps\n    Styling with function / functioning with style\n    FFI\n    Requesting API endpoints\n    Going Further"}}};
 </script>
 
 		<script>
