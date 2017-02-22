@@ -138,18 +138,20 @@ The performance of the implementation I came to is... really bad. The time taken
 
 After asking around on irc and slack, two main problems were pointed out. 
 
-- The `words` function was extremely inefficient (thanks to @mwutton)
+- The `words` function was extremely inefficient (thanks to @mwutton for pointing this out)
 - The Map and Set in `containers` package are not optimized for this sort of bagging. (thanks to @yaron)
-
 
 ## Lessons
 
-1. Always use `unorded-containers` unless you for some reason need to keep the ordering of your data structures.
-2. Sometimes pre-processing is worth the effort. You can try as hard as you want to optimize the function, but eventually
+1. Always use `unordered-containers` unless you for some reason need to keep the ordering of your data structures.
+2. Sometimes pre-processing is worth the effort. You can try as hard as you want to optimize the function, but at some point you have to call it a loss.
+
+I'd like comments about how this could be improved further. The result was not encouraging but despite this, I did learn some things along the way.
 
 Using profiteur tool to visualize the performance issues.
 ![profiling](http://i.imgur.com/BkHfS6m.png)
 
 The full code is [here](https://github.com/tippenein/spelling-hs)
+A literate haskell file to follow along is [here](https://github.com/tippenein/spelling-hs/blob/master/spelling.lhs)
 
 
