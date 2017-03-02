@@ -141,17 +141,24 @@ After asking around on irc and slack, two main problems were pointed out.
 - The `words` function was extremely inefficient (thanks to @mwutton for pointing this out)
 - The Map and Set in `containers` package are not optimized for this sort of bagging. (thanks to @yaron)
 
+In order to speed up the `words` implementation, we just shove the logic into `Data.Text`'s implementation (which is [nasty](https://hackage.haskell.org/package/text-1.2.2.1/docs/src/Data-Text.html#words)). This buys us ~1 second off the ridiculous 4 seconds.. So, I went further.
+
+Since I wasn't using any order-specific functions on Sets or Maps I just replaced the `containers` dependency with `unordered-containers` and changed the import statements to use them. Bam! This nearly halved the time! But it's still real bad at 1 second.
+
+I used the `profiteur` tool to visualize the performance issues a bit while going through this process, which just basically confirmed that Set/Map operations and `words` were awful, like we already knew.
+![profiling](http://i.imgur.com/BkHfS6m.png)
+
+It seems as though python's `Counter` shouldn't be all that different than ours (an unordered hash set) but the haskell version lags behind. I kept the code as intuitive as I knew how and it wasn't quite enough for this type of problem.
+
 ## Lessons
 
 1. Always use `unordered-containers` unless you for some reason need to keep the ordering of your data structures.
 2. Sometimes pre-processing is worth the effort. You can try as hard as you want to optimize the function, but at some point you have to call it a loss.
 
-I'd like comments about how this could be improved further. The result was not encouraging but despite this, I did learn some things along the way.
-
-Using profiteur tool to visualize the performance issues.
-![profiling](http://i.imgur.com/BkHfS6m.png)
+I'd welcome any comments about how this could be improved further. The result was not encouraging but despite this, I did learn some things along the way.
 
 The full code is [here](https://github.com/tippenein/spelling-hs)
+
 A literate haskell file to follow along is [here](https://github.com/tippenein/spelling-hs/blob/master/spelling.lhs)
 
 
