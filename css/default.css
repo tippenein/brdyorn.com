@@ -120,6 +120,7 @@ h1.section-block {
   color: #e5e5e5;
   background-color: #334455;
   padding: 12px;
+  text-align: center;
 }
 
 .post-meta {
@@ -183,7 +184,6 @@ table {
 th, td {
   text-align:left;
   padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
 }
 
 dt {
