@@ -21,4 +21,4 @@ watch: clean
 	${CMD} watch
 
 serve:
-	${CMD} serve
+	${CMD} server
