@@ -13,6 +13,7 @@ If you must build a Single Page App, it would be nice to avoid some of the work 
 The below is an extended description of the process I talked about at Purescript LA. (slides [here](/slides/bridge-talk.html))
 
 The 2 goals for minimum viability in my mind are:
+
 1. provide correct interfaces for domain-specific queries to build on.
 2. ensure handling all responses from the server.
 
@@ -165,6 +166,47 @@ main = writePSTypes "frontend/src/" (buildBridge mainBridge) myTypes
   where
     mainBridge = defaultBridge <|> int64Bridge <|> utcTimeBridge
 ```
+
+## Gen-Crafted types for your enjoyment
+
+Below are some examples of the output!
+
+```haskell
+-- src/App/Form.purs
+derive instance genericCuratorForm :: Generic CuratorForm
+derive instance newtypeCuratorForm :: Newtype CuratorForm _
+
+_email = _Newtype <<< prop (SProxy :: SProxy "email")
+_message = _Newtype <<< prop (SProxy :: SProxy "message")
+
+-- src/App/Crud.purs
+data CreateResponse =
+    CreateSuccess Int
+  | CreateFailure String
+  | FailedUniquenessConstraint 
+derive instance genericCreateResponse :: Generic CreateResponse
+
+_CreateSuccess :: Prism' CreateResponse Int
+_CreateSuccess = prism' CreateSuccess f
+  where
+    f (CreateSuccess a) = Just $ a
+    f _ = Nothing
+
+_CreateFailure :: Prism' CreateResponse String
+_CreateFailure = prism' CreateFailure f
+  where
+    f (CreateFailure a) = Just $ a
+    f _ = Nothing
+
+_FailedUniquenessConstraint :: Prism' CreateResponse Unit
+_FailedUniquenessConstraint = prism' (\_ -> FailedUniquenessConstraint) f
+  where
+    f FailedUniquenessConstraint = Just unit
+    f _ = Nothing
+```
+
+I've pasted the entirety of both files I'm using to [this gist](https://gist.github.com/tippenein/2e15b695bac673a5acd7a167c2ba4808) and note the naming is slightly different because in _real_ use you'll have to deal with the travesty of haskell record namespaces.
+
 
 ## Next Steps
 
