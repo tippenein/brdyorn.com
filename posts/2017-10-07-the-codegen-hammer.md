@@ -49,7 +49,7 @@ render state = do
     Form.textField "email"   "Email"  _email   (Form.nonBlank <=< Form.emailValidator)
 ```
 
-Something worth noting here is the 3rd arguments to `textField`. These lens' are generated from purescript-bridge (along with Prisms for `CreateResponse`) and they're uses to access and set values in the form where `state.form` is giving us the `CuratorForm` which is also generated from our haskell types. The only thing here that's actually locally defined is the `NewCurator` input event. That's all that should be needed to hook this form into your state.
+Something worth noting here is the 3rd arguments to `textField`. These lens' are generated from purescript-bridge (along with Prisms for `CreateResponse`) and they're used to access and set values in the form where `state.form` is giving us the `CuratorForm` which is also generated from our haskell types. The only thing here that's actually locally defined is the `NewCurator` input event. That's all that should be needed to hook this form into your state.
 
 ```haskell
   -- the CuratorForm is the 'form' field of our state.
@@ -85,7 +85,7 @@ data CreateResponse
   deriving (Generic, Typeable, Show)
 ```
 
-This can change based on the backend needs and you'll be forced to handle those cases in the frontend. *thumbs up*
+This can change based on the backend needs and you'll be forced to handle those cases in the frontend.
 
 ## Your Haskell API
 
@@ -105,7 +105,7 @@ This will:
 - populate ENV from a `.env` file
 - read the app settings from a yaml and return it
 
-*brent rambo thumbs up gif*
+*brent rambo thumbs up*
 
 ## Gen
 
@@ -113,7 +113,7 @@ The process of defining "bridges" from haskell to purescript is relatively strai
 
 This next bit could all be found in the [example](https://github.com/gonimo/gonimo-back/blob/master/app/PSGenerator.hs) or readme of [purescript-bridge](https://www.stackage.org/nightly-2017-10-07/package/purescript-bridge-0.11.0.0), but I'll briefly explain the context for each of these code blocks.
 
-In you CodeGen module you'll need to specify which types are going to be generated in purescript.
+In your CodeGen module you'll need to specify which types are going to be generated in purescript.
 
 ```haskell
 -- Your list of types to provide
