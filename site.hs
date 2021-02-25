@@ -133,6 +133,6 @@ feedConfiguration = FeedConfiguration
   { feedTitle       = "Brady Ouren's home page feed."
   , feedDescription = "Brady Ouren's home page feed."
   , feedAuthorName  = "Brady Ouren"
-  , feedAuthorEmail = "brdyorn@andand.co"
-  , feedRoot        = "http://brdyorn.com"
+  , feedAuthorEmail = "brady.ouren@gmail.com"
+  , feedRoot        = "http://bradyouren.com"
   }

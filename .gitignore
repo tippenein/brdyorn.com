@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io/api/haskell
 
+*.lock
 .DS_Store
 ### Haskell ###
 dist

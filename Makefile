@@ -15,7 +15,7 @@ deploy:
 	stack build
 	${CMD} clean
 	${CMD} build
-	cp -r _site/* ../tippenein.github.io/
+  scp -r _site/* pi@bradyouren.com:~/bradyouren.com/
 
 watch: clean
 	${CMD} watch
